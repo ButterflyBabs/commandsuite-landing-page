@@ -525,6 +525,9 @@ function ReplacesStack() {
           Everything you&apos;ve been stitching together — and paying for separately — lives in one
           integrated system. Bring it all home, and cancel the rest.
         </p>
+        <p className="mx-auto mt-3 max-w-xl text-sm text-indigo/60">
+          You can also integrate your favorite software — easily, and all in one place.
+        </p>
       </div>
       <div className="mx-auto mt-12 max-w-4xl px-6">
         <div className="overflow-hidden rounded-3xl border border-indigo/10 bg-white/60 shadow-card">
@@ -560,7 +563,7 @@ function ReplacesStack() {
 
 function WhoFor() {
   return (
-    <section className="bg-ivory py-24">
+    <section className="bg-watercolor-soft py-24">
       <div className="mx-auto max-w-3xl px-6 text-center">
         <Eyebrow>Who it&apos;s for</Eyebrow>
         <h2 className="font-serif text-3xl font-semibold leading-tight md:text-4xl">
@@ -583,7 +586,7 @@ function WhoFor() {
 
 function ClarityShowcase() {
   return (
-    <section className="bg-watercolor-soft py-16">
+    <section className="bg-ivory py-16">
       <ShowcaseImage
         src={IMG.clarity}
         alt="Lead with clarity. Build with purpose. — the all-in-one Command Suite to bring your life and business into one system, grow, and create lasting impact."
