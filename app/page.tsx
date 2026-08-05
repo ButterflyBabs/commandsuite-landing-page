@@ -218,7 +218,7 @@ function TransformationStatement() {
           so you can build a legacy instead of just surviving the next launch.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <PrimaryCTA href="#assessment">Take your Executive Business Assessment →</PrimaryCTA>
+          <PrimaryCTA href="/assessment">Take your Executive Business Assessment →</PrimaryCTA>
           <GhostCTA href="#call" light>
             Book an Executive Consultation
           </GhostCTA>
@@ -369,7 +369,7 @@ function Proof() {
 
       <div className="mt-12 flex flex-col items-center justify-center gap-4 px-6 sm:flex-row">
         <PrimaryCTA href="#call">Book your Executive Consultation →</PrimaryCTA>
-        <GhostCTA href="#assessment" light>
+        <GhostCTA href="/assessment" light>
           Take the complimentary assessment and see your first score
         </GhostCTA>
       </div>
@@ -691,7 +691,7 @@ function FinalCall() {
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <PrimaryCTA href="#call">Book your Executive Consultation →</PrimaryCTA>
-          <GhostCTA href="#assessment" light>
+          <GhostCTA href="/assessment" light>
             Or take the complimentary assessment first
           </GhostCTA>
         </div>
