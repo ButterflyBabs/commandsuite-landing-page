@@ -611,7 +611,8 @@ function Investment() {
           discount.
         </p>
         <p className="mt-8 font-serif text-2xl font-medium text-gold text-balance">
-          Programs begin at a $2,497 implementation fee plus monthly, with pay-in-full options.
+          Priced as one investment — the coaching and the Command Suite, together — matched to the
+          level of support you want.
         </p>
         <p className="mx-auto mt-6 max-w-xl leading-relaxed text-ivory/75">
           Which level fits you depends on how much hands-on help you want — from self-driven in the
