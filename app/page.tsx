@@ -684,7 +684,7 @@ function FinalCall() {
       <Butterfly className="pointer-events-none absolute -right-8 bottom-4 h-56 w-56 animate-floaty text-gold/15" />
       <div className="relative mx-auto max-w-2xl px-6 text-center">
         <h2 className="font-serif text-4xl font-semibold leading-tight text-balance md:text-5xl">
-          Your business can stop running on fear.
+          Your business can stop running on overwhelm.
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-ivory/80">
           Come find your clarity — and get the Command Suite to run it, on purpose, every day.
