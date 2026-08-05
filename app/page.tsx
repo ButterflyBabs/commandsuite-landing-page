@@ -142,7 +142,7 @@ function Nav() {
         </a>
         <div className="hidden items-center gap-8 text-sm font-medium text-indigo/80 md:flex">
           <a href="#what" className="hover:text-indigo">What it is</a>
-          <a href="#demo" className="hover:text-indigo">The demo</a>
+          <a href="#tour" className="hover:text-indigo">The command center</a>
           <a href="#start" className="hover:text-indigo">Ways to start</a>
           <a
             href="#call"
@@ -191,7 +191,7 @@ function TransformationStatement() {
           — so you can build a legacy instead of just surviving the next launch.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <PrimaryCTA href="#demo">See the command center in action →</PrimaryCTA>
+          <PrimaryCTA href="#tour">See the command center in action →</PrimaryCTA>
           <GhostCTA href="#assessment" light>
             Take the free alignment assessment
           </GhostCTA>
@@ -289,7 +289,7 @@ function WhatItIs() {
   );
 }
 
-function Demo() {
+function Proof() {
   const modules = [
     [IMG.executiveHome, "Executive Home — see your day, priorities, and momentum at a glance"],
     [IMG.dailyCompass, "Daily Compass — align your day with what matters most"],
@@ -297,17 +297,16 @@ function Demo() {
     [IMG.planning, "Planning Hub — turn big-picture vision into structured, strategic action"],
   ] as const;
   return (
-    <section id="demo" className="bg-indigo-deep py-24 text-ivory">
+    <section id="tour" className="bg-indigo-deep py-24 text-ivory">
       <div className="mx-auto max-w-4xl px-6 text-center">
         <Eyebrow>Proof, not promises</Eyebrow>
         <h2 className="font-serif text-3xl font-semibold leading-tight text-balance md:text-4xl">
-          This isn&apos;t a waitlist. It&apos;s a working command center — come see it run.
+          This isn&apos;t a waitlist. It&apos;s a working command center.
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ivory/80">
-          Most programs ask you to imagine the transformation. We&apos;ll just show you. Step inside{" "}
-          <strong className="text-gold">Brand Alchemy Studio</strong> — a fully live demo studio with
-          real numbers, real scores, and the whole system populated — and watch the cockpit actually
-          work.
+          Most programs ask you to imagine the transformation. We&apos;ll just show you — a fully
+          built command center with real numbers, real scores, and the whole system populated. This is
+          what it looks like when your business finally runs from one place.
         </p>
       </div>
 
@@ -336,7 +335,7 @@ function Demo() {
       </div>
 
       <div className="mt-12 flex flex-col items-center justify-center gap-4 px-6 sm:flex-row">
-        <PrimaryCTA href="/demo">Open the live demo →</PrimaryCTA>
+        <PrimaryCTA href="#call">Book your alignment call →</PrimaryCTA>
         <GhostCTA href="#assessment" light>
           Take the free assessment and see your own first score
         </GhostCTA>
@@ -484,7 +483,7 @@ function WhoFor() {
         <p className="mt-8 text-lg leading-relaxed text-indigo/80">
           LifeCharter is for <strong>coaches of every kind — business, life, mindset, branding — and
           the service-based founders and solopreneurs who sell their expertise.</strong> The branding
-          studio in the demo is one doorway, not the whole house. We don&apos;t gate by niche or
+          studio you see here is one doorway, not the whole house. We don&apos;t gate by niche or
           revenue band; we meet you where you are.
         </p>
         <p className="mt-6 text-lg leading-relaxed text-indigo/80">
@@ -603,8 +602,8 @@ function FinalCall() {
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <PrimaryCTA href="#call">Book your alignment call →</PrimaryCTA>
-          <GhostCTA href="/demo" light>
-            Or open the live demo first
+          <GhostCTA href="#assessment" light>
+            Or take the free assessment first
           </GhostCTA>
         </div>
       </div>
@@ -638,7 +637,7 @@ export default function Page() {
       <Tension />
       <Divider />
       <WhatItIs />
-      <Demo />
+      <Proof />
       <BeforeAfter />
       <BrandBand />
       <Inside />
