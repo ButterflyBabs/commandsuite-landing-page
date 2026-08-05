@@ -4,11 +4,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "LifeCharter — From a scattered hustle to a soft landing",
   description:
-    "An architect-led alignment program with a working command center. Find your alignment, then run your business from it — one place where your mission, brand, and business align, on purpose.",
+    "Architect-led executive coaching paired with the LifeCharter Command Suite. Find your clarity, then run your business from one integrated system — mission, brand, and finances working as one, on purpose.",
   openGraph: {
     title: "LifeCharter — From a scattered hustle to a soft landing",
     description:
-      "Find your alignment, then run your business from it. Architect-led coaching plus a live command center.",
+      "Executive coaching plus the Command Suite — one integrated system to build, run, and grow a lasting business legacy.",
     type: "website",
   },
 };
