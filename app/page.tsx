@@ -142,7 +142,7 @@ function Nav() {
         </a>
         <div className="hidden items-center gap-8 text-sm font-medium text-indigo/80 md:flex">
           <a href="#what" className="hover:text-indigo">What it is</a>
-          <a href="#tour" className="hover:text-indigo">The command center</a>
+          <a href="#tour" className="hover:text-indigo">The Command Suite</a>
           <a href="#start" className="hover:text-indigo">Ways to start</a>
           <a
             href="#call"
@@ -166,7 +166,7 @@ function Hero() {
       <Nav />
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={IMG.ecosystem}
+        src="/hero.png"
         alt="LifeCharter Command Suite — one ecosystem, multiple doorways: your whole business, planning, focus, and finances, in one aligned command center"
         className="mx-auto block w-full max-w-[1600px]"
       />
@@ -191,9 +191,9 @@ function TransformationStatement() {
           — so you can build a legacy instead of just surviving the next launch.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <PrimaryCTA href="#tour">See the command center in action →</PrimaryCTA>
-          <GhostCTA href="#assessment" light>
-            Take the free alignment assessment
+          <PrimaryCTA href="#assessment">Take the free alignment assessment →</PrimaryCTA>
+          <GhostCTA href="#call" light>
+            Book an alignment call
           </GhostCTA>
         </div>
       </div>
