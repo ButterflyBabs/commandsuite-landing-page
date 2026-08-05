@@ -148,7 +148,7 @@ function Nav() {
             href="#call"
             className="rounded-full bg-gold px-5 py-2 font-semibold text-indigo-deep hover:bg-gold-soft"
           >
-            Book an alignment call
+            Book an Executive Consultation
           </a>
         </div>
       </nav>
@@ -167,7 +167,7 @@ function Hero() {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/hero.png"
-        alt="LifeCharter Command Suite — one ecosystem, multiple doorways: your whole business, planning, focus, and finances, in one aligned command center"
+        alt="LifeCharter Command Suite — one ecosystem, multiple doorways: your whole business, planning, focus, and finances, in one aligned Command Suite"
         className="mx-auto block w-full max-w-[1600px]"
       />
     </section>
@@ -181,19 +181,19 @@ function TransformationStatement() {
       <Compass className="pointer-events-none absolute -left-16 bottom-0 h-72 w-72 text-lavender/10" />
       <div className="relative mx-auto max-w-4xl px-6 text-center animate-fadeUp">
         <p className="mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-gold">
-          An architect-led alignment program with a working command center
+          An architect-led alignment program with a working Command Suite
         </p>
         <h1 className="font-serif text-4xl font-semibold leading-[1.1] text-balance sm:text-5xl md:text-6xl">
           From white-knuckling a scattered hustle to a soft landing.
         </h1>
         <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-ivory/80">
-          One clear command center where your mission, brand, and business finally align — on purpose
-          — so you can build a legacy instead of just surviving the next launch.
+          One Command Suite where your mission, brand, and business finally align — on purpose — so you
+          can build a legacy instead of just surviving the next launch.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <PrimaryCTA href="#assessment">Take the free alignment assessment →</PrimaryCTA>
           <GhostCTA href="#call" light>
-            Book an alignment call
+            Book an Executive Consultation
           </GhostCTA>
         </div>
       </div>
@@ -203,7 +203,7 @@ function TransformationStatement() {
 
 function Tension() {
   const symptoms = [
-    "Too many tools and tabs, no command center",
+    "Too many tools and tabs — no single place to run it all",
     "Great work, positioned in a way that doesn't land",
     "Delivery capped because it all runs through you",
     "Growing — but quietly off-mission",
@@ -212,7 +212,8 @@ function Tension() {
     <section className="bg-ivory py-24">
       <div className="mx-auto max-w-3xl px-6 text-center">
         <h2 className="font-serif text-3xl font-semibold leading-tight text-balance md:text-4xl">
-          You didn&apos;t build this on a plan. You built it on willpower. And you can feel the ceiling.
+          You had a plan. You built it on passion and willpower. But no one built it{" "}
+          <em>with</em> you — and now you can feel the ceiling.
         </h2>
         <div className="mt-8 space-y-5 text-lg leading-relaxed text-indigo/80">
           <p>
@@ -222,8 +223,8 @@ function Tension() {
             you actually are.
           </p>
           <p>
-            That&apos;s not a productivity problem. It&apos;s an <strong>alignment</strong> problem.
-            Your business grew reactively, and now it&apos;s running on fear instead of Truth —
+            Yours is not a productivity problem. It&apos;s a <strong>process</strong> problem. Your
+            business grew reactively, and now it&apos;s running on fear and overwhelm instead of Truth —
             off-mission, off-brand, and capped, because everything still runs through you.
           </p>
           <p className="font-medium text-indigo">
@@ -255,35 +256,38 @@ function WhatItIs() {
           Find your alignment. Then run your business from it.
         </h2>
         <p className="mx-auto mt-8 max-w-2xl font-serif text-2xl font-medium leading-snug text-plum text-balance">
-          &ldquo;The coaching is where you find your alignment. The command center is where you live
+          &ldquo;The coaching is where you find your alignment. The Command Suite is where you live
           it — every day.&rdquo;
         </p>
       </div>
       <div className="mx-auto mt-14 grid max-w-5xl gap-6 px-6 md:grid-cols-2">
         <div className="card-hover rounded-3xl bg-white/70 p-8 shadow-card">
           <Compass className="h-10 w-10 text-teal" />
-          <h3 className="mt-5 font-serif text-xl font-semibold text-indigo">The coaching — your why</h3>
+          <h3 className="mt-5 font-serif text-xl font-semibold text-indigo">Executive Coaching</h3>
           <p className="mt-3 leading-relaxed text-indigo/75">
-            Executive coaching, led by your Alignment Architect in a grounded cohort, is where you find
-            your Truth: who you are, what your business is really for, and the legacy you&apos;re
-            building.
+            Architect-led coaching that walks you through all 12 business dimensions and 8 operational
+            pillars — bringing vision, marketing, sales, finance, leadership, and the rest into
+            alignment. This is where you find your Truth, your mission, and the legacy you&apos;re here
+            to build.
           </p>
         </div>
         <div className="card-hover rounded-3xl bg-white/70 p-8 shadow-card">
           <Butterfly className="h-10 w-14 text-gold" />
-          <h3 className="mt-5 font-serif text-xl font-semibold text-indigo">
-            The command center — where you live it
-          </h3>
+          <h3 className="mt-5 font-serif text-xl font-semibold text-indigo">The Command Suite</h3>
           <p className="mt-3 leading-relaxed text-indigo/75">
-            The cockpit where that alignment becomes real work, week after week, instead of evaporating
-            after the call. You never get the command center on its own — the coaching and the cockpit
-            always come together.
+            A complete ecosystem to build, run, and grow a lasting business legacy — your dimensions,
+            plans, finances, and daily focus, all in one place. It&apos;s where your alignment becomes
+            real, repeatable work instead of insight that fades after the call.
           </p>
         </div>
       </div>
       <p className="mx-auto mt-10 max-w-2xl px-6 text-center text-indigo/70">
-        You&apos;re not a user here; you&apos;re a client — and this is an architect-and-client
-        relationship from day one.
+        Together they&apos;re inseparable — the coaching shows the way, the Suite makes it real, and you
+        get{" "}
+        <strong className="font-semibold text-indigo">
+          practical, meaningful implementation support every step of the way.
+        </strong>{" "}
+        You&apos;re never handed a system and left to figure it out alone.
       </p>
     </section>
   );
@@ -301,11 +305,11 @@ function Proof() {
       <div className="mx-auto max-w-4xl px-6 text-center">
         <Eyebrow>Proof, not promises</Eyebrow>
         <h2 className="font-serif text-3xl font-semibold leading-tight text-balance md:text-4xl">
-          This isn&apos;t a waitlist. It&apos;s a working command center.
+          This isn&apos;t a waitlist. It&apos;s a working Command Suite.
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ivory/80">
           Most programs ask you to imagine the transformation. We&apos;ll just show you — a fully
-          built command center with real numbers, real scores, and the whole system populated. This is
+          built Command Suite with real numbers, real scores, and the whole system populated. This is
           what it looks like when your business finally runs from one place.
         </p>
       </div>
@@ -335,7 +339,7 @@ function Proof() {
       </div>
 
       <div className="mt-12 flex flex-col items-center justify-center gap-4 px-6 sm:flex-row">
-        <PrimaryCTA href="#call">Book your alignment call →</PrimaryCTA>
+        <PrimaryCTA href="#call">Book your Executive Consultation →</PrimaryCTA>
         <GhostCTA href="#assessment" light>
           Take the free assessment and see your own first score
         </GhostCTA>
@@ -353,7 +357,7 @@ function BeforeAfter() {
     "Growing, but off-mission",
   ];
   const after = [
-    "One command center, running on purpose",
+    "One Command Suite, running on purpose",
     "Aligned — mission, brand, and business as one",
     "Positioned clearly, landing with the right people",
     "Systems that hold it, so you're not the bottleneck",
@@ -429,7 +433,7 @@ function Inside() {
   ];
   const community = [
     ["Weekly community coaching", "Group calls, with 1:1 as needed."],
-    ["Weekly tech-support call", "Get unstuck in the command center."],
+    ["Weekly tech-support call", "Get unstuck in the Command Suite."],
     ["2× monthly Growth Sessions", "Learning as a cohort."],
     ["2× monthly Hope Seat", "Bring a real challenge; the community works it live."],
     ["A standalone private community", "Off Facebook, away from prying eyes — coaches and cohort members who get it."],
@@ -444,7 +448,7 @@ function Inside() {
       </div>
       <div className="mx-auto mt-12 grid max-w-5xl gap-6 px-6 md:grid-cols-2">
         <div className="rounded-3xl bg-white/70 p-8 shadow-card">
-          <h3 className="font-serif text-xl font-semibold text-indigo">The command center</h3>
+          <h3 className="font-serif text-xl font-semibold text-indigo">The Command Suite</h3>
           <p className="mt-1 text-sm text-indigo/60">What you&apos;ll run your business from.</p>
           <ul className="mt-5 grid gap-2.5 text-indigo/80">
             {suite.map((s) => (
@@ -467,6 +471,59 @@ function Inside() {
             ))}
           </ul>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function ReplacesStack() {
+  const rows = [
+    ["Your CRM", "Sales pipeline, contacts, and conversion tracking"],
+    ["QuickBooks & financial apps", "A live income & expense ledger, budgets, and monthly review"],
+    ["Marketing & email tools", "Content creation, a content calendar, and a scripts & templates library"],
+    ["Social schedulers", "Create, schedule, and track your content and engagement in one flow"],
+    ["Task & productivity apps", "The Daily Compass — energy-aware focus, quick wins, and today's priorities"],
+    ["Planning docs & spreadsheets", "Business, marketing, sales & forecasting plans that score your progress"],
+  ] as const;
+  return (
+    <section className="bg-ivory py-24">
+      <div className="mx-auto max-w-3xl px-6 text-center">
+        <Eyebrow>One place, not twelve tabs</Eyebrow>
+        <h2 className="font-serif text-3xl font-semibold leading-tight text-balance md:text-4xl">
+          Your Command Suite replaces the tool pile.
+        </h2>
+        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-indigo/80">
+          Everything you&apos;ve been stitching together — and paying for separately — lives in one
+          aligned system. Bring it all home, and cancel the rest.
+        </p>
+      </div>
+      <div className="mx-auto mt-12 max-w-4xl px-6">
+        <div className="overflow-hidden rounded-3xl border border-indigo/10 bg-white/60 shadow-card">
+          {rows.map(([replaces, withText], i) => (
+            <div
+              key={replaces}
+              className={`grid grid-cols-1 gap-2 px-6 py-5 sm:grid-cols-2 sm:items-center sm:gap-8 ${
+                i > 0 ? "border-t border-indigo/10" : ""
+              }`}
+            >
+              <div className="flex items-baseline gap-3">
+                <span className="text-[0.65rem] font-semibold uppercase tracking-widest text-indigo/35">
+                  Replaces
+                </span>
+                <span className="font-semibold text-indigo/70 line-through decoration-indigo/25">
+                  {replaces}
+                </span>
+              </div>
+              <div className="flex items-start gap-3 text-indigo">
+                <Compass className="mt-1 h-4 w-4 shrink-0 text-gold" />
+                <span>{withText}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="mx-auto mt-8 max-w-xl text-center font-serif text-xl text-plum text-balance">
+          One login. One source of Truth. One monthly cost instead of six.
+        </p>
       </div>
     </section>
   );
@@ -500,7 +557,7 @@ function ClarityShowcase() {
     <section className="bg-watercolor-soft py-16">
       <ShowcaseImage
         src={IMG.clarity}
-        alt="Lead with clarity. Build with purpose. — the all-in-one command center to align your life, grow your business, and create lasting impact."
+        alt="Lead with clarity. Build with purpose. — the all-in-one Command Suite to align your life, grow your business, and create lasting impact."
       />
     </section>
   );
@@ -516,7 +573,7 @@ function Investment() {
         </h2>
         <p className="mt-8 text-lg leading-relaxed text-ivory/80">
           LifeCharter is a premium, architect-led program. Every client gets the coaching{" "}
-          <em>and</em> the full command center, together — it starts with an implementation phase
+          <em>and</em> the full Command Suite, together — it starts with an implementation phase
           where we architect your alignment and set up your cockpit, then continues as ongoing coaching
           and Suite access. Cancel anytime after the first year, and pay in full for a meaningful
           discount.
@@ -528,10 +585,10 @@ function Investment() {
           Which level fits you depends on how much hands-on help you want — from self-driven in the
           cohort, to a monthly hand on the wheel, to having it architected right alongside you.
           That&apos;s a conversation, not a checkout — we&apos;ll find the right fit together on your
-          alignment call.
+          Executive Consultation.
         </p>
         <div className="mt-10">
-          <PrimaryCTA href="#call">Book your alignment call →</PrimaryCTA>
+          <PrimaryCTA href="#call">Book your Executive Consultation →</PrimaryCTA>
         </div>
       </div>
     </section>
@@ -542,14 +599,14 @@ function WaysToStart() {
   const doors = [
     ["Free alignment assessment", "Take it in minutes and see your first live score.", "Take the assessment", "#assessment"],
     ["Free 21-Day Challenge", "A daily taste of what it feels like to run aligned.", "Join the challenge", "#challenge"],
-    ["Free MasterClass", "See the full method and the command center, live.", "Save my seat", "#masterclass"],
+    ["Free MasterClass", "See the full method and the Command Suite, live.", "Save my seat", "#masterclass"],
   ] as const;
   return (
     <section id="start" className="bg-ivory py-24">
       <div className="mx-auto max-w-3xl px-6 text-center">
         <Eyebrow>Ways to start</Eyebrow>
         <h2 className="font-serif text-3xl font-semibold leading-tight md:text-4xl">
-          Not ready for a call? Start with a doorway.
+          Not ready for a consultation? Start with a doorway.
         </h2>
       </div>
       <div className="mx-auto mt-12 grid max-w-5xl gap-6 px-6 md:grid-cols-3">
@@ -598,10 +655,10 @@ function FinalCall() {
           Your business can stop running on fear.
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-ivory/80">
-          Come find your alignment — and get the command center to live it, on purpose, every day.
+          Come find your alignment — and get the Command Suite to live it, on purpose, every day.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <PrimaryCTA href="#call">Book your alignment call →</PrimaryCTA>
+          <PrimaryCTA href="#call">Book your Executive Consultation →</PrimaryCTA>
           <GhostCTA href="#assessment" light>
             Or take the free assessment first
           </GhostCTA>
@@ -641,6 +698,7 @@ export default function Page() {
       <BeforeAfter />
       <BrandBand />
       <Inside />
+      <ReplacesStack />
       <WhoFor />
       <ClarityShowcase />
       <Investment />
