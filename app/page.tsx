@@ -1,6 +1,22 @@
 import type { ReactNode } from "react";
 
 /* ------------------------------------------------------------------ */
+/*  Brand imagery (hosted on ImageKit)                                 */
+/* ------------------------------------------------------------------ */
+
+const IK = "https://ik.imagekit.io/amilynne/LC%20Command%20Suite%20";
+const IMG = {
+  ecosystem: `${IK}/ChatGPT%20Image%20Aug%205,%202026,%2012_30_58%20PM%20(8).png`, // One ecosystem. Multiple doorways.
+  clarity: `${IK}/ChatGPT%20Image%20Aug%205,%202026,%2012_30_56%20PM%20(1).png`, // Lead with Clarity. Build with Purpose.
+  brand: `${IK}/ChatGPT%20Image%20Aug%205,%202026,%2012_30_57%20PM%20(6).png`, // Clarity. Alignment. Activation. Ascension.
+  howItWorks: `${IK}/ChatGPT%20Image%20Aug%205,%202026,%2012_30_58%20PM%20(7).png`, // How the Command Suite Works
+  executiveHome: `${IK}/ChatGPT%20Image%20Aug%205,%202026,%2012_30_56%20PM%20(2).png`,
+  dailyCompass: `${IK}/ChatGPT%20Image%20Aug%205,%202026,%2012_30_57%20PM%20(4).png`,
+  finance: `${IK}/ChatGPT%20Image%20Aug%205,%202026,%2012_30_57%20PM%20(5).png`,
+  planning: `${IK}/ChatGPT%20Image%20Aug%205,%202026,%2012_30_56%20PM%20(3).png`,
+};
+
+/* ------------------------------------------------------------------ */
 /*  Brand motifs                                                       */
 /* ------------------------------------------------------------------ */
 
@@ -86,6 +102,32 @@ function Divider() {
   );
 }
 
+/* A framed showcase image (brand banners + product mockups) */
+function ShowcaseImage({
+  src,
+  alt,
+  caption,
+}: {
+  src: string;
+  alt: string;
+  caption?: string;
+}) {
+  return (
+    <figure className="mx-auto max-w-6xl px-6">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        className="w-full rounded-2xl border border-indigo/10 shadow-soft"
+      />
+      {caption && (
+        <figcaption className="mt-4 text-center text-sm text-indigo/60">{caption}</figcaption>
+      )}
+    </figure>
+  );
+}
+
 /* ------------------------------------------------------------------ */
 /*  Navigation                                                         */
 /* ------------------------------------------------------------------ */
@@ -142,6 +184,18 @@ function Hero() {
           </div>
         </div>
       </div>
+    </section>
+  );
+}
+
+function EcosystemShowcase() {
+  return (
+    <section className="bg-ivory pb-16 pt-14">
+      <ShowcaseImage
+        src={IMG.ecosystem}
+        alt="LifeCharter Command Suite — one ecosystem, multiple doorways"
+        caption="Your whole business — planning, focus, and finances — in one aligned command center."
+      />
     </section>
   );
 }
@@ -235,12 +289,12 @@ function WhatItIs() {
 }
 
 function Demo() {
-  const seeItems = [
-    ["12 Business Dimensions, scored live", "Marketing, Sales, Operations, Finance, Team, Systems, Leadership, Vision, Product, Client Experience, Legal, Sustainability — each card explains why its score is what it is."],
-    ["The Daily Compass", "Energy-aware daily focus, quick wins that become real tasks, content, calendar, and sales activity — all in one place."],
-    ["Three assessments", "Profit Architecture, Brain, and Soul — alignment shows up when the three start moving together."],
-    ["Live ledger, pipeline & plans", "Real income and expenses, a working sales pipeline, and business/marketing/sales plans that feed the scores."],
-  ];
+  const modules = [
+    [IMG.executiveHome, "Executive Home — see your day, priorities, and momentum at a glance"],
+    [IMG.dailyCompass, "Daily Compass — align your day with what matters most"],
+    [IMG.finance, "Finance Center — track the numbers that move your mission"],
+    [IMG.planning, "Planning Hub — turn big-picture vision into structured, strategic action"],
+  ] as const;
   return (
     <section id="demo" className="bg-indigo-deep py-24 text-ivory">
       <div className="mx-auto max-w-4xl px-6 text-center">
@@ -255,14 +309,31 @@ function Demo() {
           work.
         </p>
       </div>
-      <div className="mx-auto mt-12 grid max-w-5xl gap-5 px-6 sm:grid-cols-2">
-        {seeItems.map(([title, body]) => (
-          <div key={title} className="rounded-3xl border border-ivory/15 bg-ivory/5 p-7">
-            <h3 className="font-serif text-lg font-semibold text-gold">{title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-ivory/75">{body}</p>
-          </div>
+
+      {/* How it works — the centerpiece */}
+      <div className="mt-12">
+        <ShowcaseImage
+          src={IMG.howItWorks}
+          alt="How the Command Suite works — four connected pillars: See Clearly, Plan Strategically, Execute Daily, Review & Refine"
+        />
+      </div>
+
+      {/* Tour the cockpit — module gallery */}
+      <p className="mx-auto mt-14 mb-6 max-w-3xl px-6 text-center font-serif text-2xl text-gold">
+        Take a tour of the cockpit
+      </p>
+      <div className="mx-auto grid max-w-6xl gap-5 px-6 sm:grid-cols-2">
+        {modules.map(([src, alt]) => (
+          <figure
+            key={alt}
+            className="overflow-hidden rounded-2xl border border-ivory/15 bg-ivory shadow-soft"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={src} alt={alt} loading="lazy" className="w-full" />
+          </figure>
         ))}
       </div>
+
       <div className="mt-12 flex flex-col items-center justify-center gap-4 px-6 sm:flex-row">
         <PrimaryCTA href="/demo">Open the live demo →</PrimaryCTA>
         <GhostCTA href="#assessment" light>
@@ -325,6 +396,21 @@ function BeforeAfter() {
         This is what a soft landing looks like: not less ambition — less friction, and finally
         aligned.
       </p>
+    </section>
+  );
+}
+
+/* Full-bleed brand banner: Clarity. Alignment. Activation. Ascension. */
+function BrandBand() {
+  return (
+    <section aria-label="Clarity. Alignment. Activation. Ascension." className="bg-indigo-deep">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={IMG.brand}
+        alt="Clarity. Alignment. Activation. Ascension. — a command system for becoming what you are called to build."
+        loading="lazy"
+        className="mx-auto w-full max-w-[1600px]"
+      />
     </section>
   );
 }
@@ -409,6 +495,17 @@ function WhoFor() {
   );
 }
 
+function ClarityShowcase() {
+  return (
+    <section className="bg-watercolor-soft py-16">
+      <ShowcaseImage
+        src={IMG.clarity}
+        alt="Lead with clarity. Build with purpose. — the all-in-one command center to align your life, grow your business, and create lasting impact."
+      />
+    </section>
+  );
+}
+
 function Investment() {
   return (
     <section className="bg-watercolor-deep py-24 text-ivory">
@@ -446,7 +543,7 @@ function WaysToStart() {
     ["Free alignment assessment", "Take it in minutes and see your first live score.", "Take the assessment", "#assessment"],
     ["Free 21-Day Challenge", "A daily taste of what it feels like to run aligned.", "Join the challenge", "#challenge"],
     ["Free MasterClass", "See the full method and the command center, live.", "Save my seat", "#masterclass"],
-  ];
+  ] as const;
   return (
     <section id="start" className="bg-ivory py-24">
       <div className="mx-auto max-w-3xl px-6 text-center">
@@ -536,13 +633,16 @@ export default function Page() {
   return (
     <main>
       <Hero />
+      <EcosystemShowcase />
       <Tension />
       <Divider />
       <WhatItIs />
       <Demo />
       <BeforeAfter />
+      <BrandBand />
       <Inside />
       <WhoFor />
+      <ClarityShowcase />
       <Investment />
       <WaysToStart />
       <Architect />
