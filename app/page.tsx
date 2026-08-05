@@ -311,7 +311,7 @@ function WhatItIs() {
         </div>
       </div>
       <p className="mx-auto mt-10 max-w-2xl px-6 text-center text-indigo/70">
-        Together they&apos;re inseparable — the coaching shows the way, the Suite makes it real, and you
+        Together they&apos;re inseparable — the coaching shows the way, the Command Suite makes it real, and you
         get{" "}
         <strong className="font-semibold text-indigo">
           practical, meaningful implementation support every step of the way.
@@ -607,7 +607,7 @@ function Investment() {
           LifeCharter is a premium, architect-led program. Every client gets the coaching{" "}
           <em>and</em> the full Command Suite, together — it starts with an implementation phase
           where we architect your systems and set up your cockpit, then continues as ongoing coaching
-          and Suite access. Cancel anytime after the first year, and pay in full for a meaningful
+          and Command Suite access. Cancel anytime after the first year, and pay in full for a meaningful
           discount.
         </p>
         <p className="mt-8 font-serif text-2xl font-medium text-gold text-balance">

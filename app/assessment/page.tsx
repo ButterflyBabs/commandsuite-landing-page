@@ -62,7 +62,7 @@ const DIMENSIONS: Dim[] = [
     label: "Team",
     statement: "The people who help me have clear roles and know exactly what to own.",
     reason:
-      "Clear plans and roles inside the Suite mean your team or contractors know what's theirs — so it stops all running through you.",
+      "Clear plans and roles inside the Command Suite mean your team or contractors know what's theirs — so it stops all running through you.",
   },
   {
     key: "systems",
@@ -83,7 +83,7 @@ const DIMENSIONS: Dim[] = [
     label: "Vision",
     statement: "I have a clear, written vision and plan for where this business is going.",
     reason:
-      "Your Business and Vision plans live in the Suite and feed your daily focus — so the big picture actually drives the day.",
+      "Your Business and Vision plans live in the Command Suite and feed your daily focus — so the big picture actually drives the day.",
   },
   {
     key: "product",
@@ -447,7 +447,9 @@ export default function AssessmentPage() {
         )}
 
         {/* RESULTS */}
-        {step === RESULTS_STEP && results && <ResultsView results={results} firstName={firstName} />}
+        {step === RESULTS_STEP && results && (
+          <ResultsView results={results} firstName={firstName} lastName={lastName} email={email} />
+        )}
       </div>
     </main>
   );
@@ -457,9 +459,67 @@ export default function AssessmentPage() {
 /*  Results view                                                       */
 /* ------------------------------------------------------------------ */
 
-function ResultsView({ results, firstName }: { results: Results; firstName: string }) {
+function ResultsView({
+  results,
+  firstName,
+  lastName,
+  email,
+}: {
+  results: Results;
+  firstName: string;
+  lastName: string;
+  email: string;
+}) {
   const band = BAND_COPY[results.band];
   const rec = results.recommendation;
+  const [mcState, setMcState] = useState<"idle" | "busy" | "done">("idle");
+
+  async function joinMasterclass() {
+    if (mcState === "busy") return;
+    setMcState("busy");
+    try {
+      await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, firstName, lastName, tag: "masterclass" }),
+      });
+    } catch {
+      /* non-blocking */
+    }
+    setMcState("done");
+    if (LINKS.masterclass && LINKS.masterclass !== "#") {
+      window.location.href = LINKS.masterclass;
+    }
+  }
+
+  const registeredInline = mcState === "done" && (!LINKS.masterclass || LINKS.masterclass === "#");
+
+  const mcPrimary = registeredInline ? (
+    <p className="mt-7 inline-block rounded-full bg-teal/10 px-7 py-4 text-sm font-semibold text-teal">
+      ✓ You&apos;re in — your seat is saved. Check your email for the details.
+    </p>
+  ) : (
+    <button
+      onClick={joinMasterclass}
+      disabled={mcState === "busy"}
+      className="mt-7 inline-block rounded-full bg-gold px-8 py-4 text-sm font-semibold text-indigo-deep shadow-soft transition hover:bg-gold-soft disabled:opacity-60"
+    >
+      {mcState === "busy" ? "Saving your seat…" : "Save my MasterClass seat →"}
+    </button>
+  );
+
+  const mcLink = (label: string) =>
+    registeredInline ? (
+      <span className="font-semibold text-teal">✓ You&apos;re registered — check your email</span>
+    ) : (
+      <button
+        onClick={joinMasterclass}
+        disabled={mcState === "busy"}
+        className="font-semibold text-teal underline-offset-2 hover:text-plum hover:underline disabled:opacity-60"
+      >
+        {mcState === "busy" ? "Saving your seat…" : label}
+      </button>
+    );
 
   return (
     <div className="animate-fadeUp">
@@ -513,10 +573,7 @@ function ResultsView({ results, firstName }: { results: Results; firstName: stri
               Join the 21-Day Challenge →
             </a>
             <p className="mt-6 text-sm text-indigo/60">
-              Ready sooner?{" "}
-              <a href={LINKS.masterclass} className="font-semibold text-teal hover:text-plum">
-                Watch the free “From Hustle to Command” MasterClass
-              </a>
+              Ready sooner? {mcLink("Join the free “From Hustle to Command” MasterClass")}
             </p>
           </>
         )}
@@ -524,15 +581,13 @@ function ResultsView({ results, firstName }: { results: Results; firstName: stri
         {rec === "masterclass" && (
           <>
             <h2 className="mt-3 font-serif text-2xl font-semibold text-indigo md:text-3xl">
-              Watch the free “From Hustle to Command” MasterClass
+              Join the free “From Hustle to Command” MasterClass
             </h2>
             <p className="mx-auto mt-3 max-w-lg text-indigo/75">
               You&apos;re ready to move. See the full method — and the Command Suite that runs it —
               then get started on the spot.
             </p>
-            <a href={LINKS.masterclass} className="mt-7 inline-block rounded-full bg-gold px-8 py-4 text-sm font-semibold text-indigo-deep shadow-soft transition hover:bg-gold-soft">
-              Save my MasterClass seat →
-            </a>
+            {mcPrimary}
             <p className="mt-6 text-sm text-indigo/60">
               Prefer a slower on-ramp?{" "}
               <a href={LINKS.challenge} className="font-semibold text-teal hover:text-plum">
@@ -555,10 +610,7 @@ function ResultsView({ results, firstName }: { results: Results; firstName: stri
               Book my Executive Consultation →
             </a>
             <p className="mt-6 text-sm text-indigo/60">
-              Want to see the method first?{" "}
-              <a href={LINKS.masterclass} className="font-semibold text-teal hover:text-plum">
-                Watch “From Hustle to Command”
-              </a>
+              Want to see the method first? {mcLink("Join “From Hustle to Command”")}
             </p>
           </>
         )}
