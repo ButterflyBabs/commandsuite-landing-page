@@ -134,19 +134,19 @@ function ShowcaseImage({
 
 function Nav() {
   return (
-    <header className="absolute inset-x-0 top-0 z-20">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-        <a href="#top" className="flex items-center gap-2 text-ivory">
-          <Compass className="h-7 w-7 text-gold" />
-          <span className="font-serif text-xl font-semibold tracking-wide">LifeCharter</span>
+    <header className="sticky top-0 z-30 border-b border-indigo/10 bg-ivory/95 backdrop-blur">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <a href="#top" className="flex items-center gap-2 text-indigo">
+          <Compass className="h-6 w-6 text-gold" />
+          <span className="font-serif text-lg font-semibold tracking-wide">LifeCharter</span>
         </a>
-        <div className="hidden items-center gap-8 text-sm text-ivory/80 md:flex">
-          <a href="#what" className="hover:text-ivory">What it is</a>
-          <a href="#demo" className="hover:text-ivory">The demo</a>
-          <a href="#start" className="hover:text-ivory">Ways to start</a>
+        <div className="hidden items-center gap-8 text-sm font-medium text-indigo/80 md:flex">
+          <a href="#what" className="hover:text-indigo">What it is</a>
+          <a href="#demo" className="hover:text-indigo">The demo</a>
+          <a href="#start" className="hover:text-indigo">Ways to start</a>
           <a
             href="#call"
-            className="rounded-full border border-gold/60 px-5 py-2 font-semibold text-gold hover:bg-gold hover:text-indigo-deep"
+            className="rounded-full bg-gold px-5 py-2 font-semibold text-indigo-deep hover:bg-gold-soft"
           >
             Book an alignment call
           </a>
@@ -162,40 +162,41 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="bg-watercolor-deep relative overflow-hidden text-ivory">
+    <section id="top" className="bg-ivory">
       <Nav />
-      <Butterfly className="pointer-events-none absolute -right-10 top-24 h-64 w-64 animate-floaty text-gold/20" />
-      <Compass className="pointer-events-none absolute -left-16 bottom-0 h-80 w-80 text-lavender/10" />
-      <div className="relative mx-auto max-w-5xl px-6 pb-28 pt-40 text-center md:pt-48">
-        <div className="animate-fadeUp">
-          <Eyebrow>An architect-led alignment program with a working command center</Eyebrow>
-          <h1 className="font-serif text-4xl font-semibold leading-[1.08] text-balance sm:text-5xl md:text-6xl">
-            From white-knuckling a scattered hustle to a soft landing.
-          </h1>
-          <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-ivory/80">
-            One clear command center where your mission, brand, and business finally align — on
-            purpose — so you can build a legacy instead of just surviving the next launch.
-          </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <PrimaryCTA href="#demo">See the command center in action →</PrimaryCTA>
-            <GhostCTA href="#assessment" light>
-              Take the free alignment assessment
-            </GhostCTA>
-          </div>
-        </div>
-      </div>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={IMG.ecosystem}
+        alt="LifeCharter Command Suite — one ecosystem, multiple doorways: your whole business, planning, focus, and finances, in one aligned command center"
+        className="mx-auto block w-full max-w-[1600px]"
+      />
     </section>
   );
 }
 
-function EcosystemShowcase() {
+function TransformationStatement() {
   return (
-    <section className="bg-ivory pb-16 pt-14">
-      <ShowcaseImage
-        src={IMG.ecosystem}
-        alt="LifeCharter Command Suite — one ecosystem, multiple doorways"
-        caption="Your whole business — planning, focus, and finances — in one aligned command center."
-      />
+    <section className="bg-watercolor-deep relative overflow-hidden py-24 text-ivory">
+      <Butterfly className="pointer-events-none absolute -right-10 top-10 h-56 w-56 animate-floaty text-gold/15" />
+      <Compass className="pointer-events-none absolute -left-16 bottom-0 h-72 w-72 text-lavender/10" />
+      <div className="relative mx-auto max-w-4xl px-6 text-center animate-fadeUp">
+        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-gold">
+          An architect-led alignment program with a working command center
+        </p>
+        <h1 className="font-serif text-4xl font-semibold leading-[1.1] text-balance sm:text-5xl md:text-6xl">
+          From white-knuckling a scattered hustle to a soft landing.
+        </h1>
+        <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-ivory/80">
+          One clear command center where your mission, brand, and business finally align — on purpose
+          — so you can build a legacy instead of just surviving the next launch.
+        </p>
+        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <PrimaryCTA href="#demo">See the command center in action →</PrimaryCTA>
+          <GhostCTA href="#assessment" light>
+            Take the free alignment assessment
+          </GhostCTA>
+        </div>
+      </div>
     </section>
   );
 }
@@ -633,7 +634,7 @@ export default function Page() {
   return (
     <main>
       <Hero />
-      <EcosystemShowcase />
+      <TransformationStatement />
       <Tension />
       <Divider />
       <WhatItIs />
