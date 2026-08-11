@@ -617,7 +617,7 @@ function ResultsView({
       </div>
 
       <p className="mx-auto mt-10 max-w-xl text-center font-serif text-lg text-plum">
-        From white-knuckling a scattered hustle to a soft landing — one system, on purpose.
+        From white-knuckling a scattered hustle to hard-won harmony — one system, on purpose.
       </p>
     </div>
   );
