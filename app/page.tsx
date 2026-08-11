@@ -630,8 +630,8 @@ function Investment() {
 
 function WaysToStart() {
   const doors = [
-    ["Complimentary Executive Business Assessment", "Take it in minutes and see your first live score.", "Take the assessment", "#assessment"],
-    ["Free 21-Day Challenge", "A daily taste of what it feels like to run with structure.", "Join the challenge", "#challenge"],
+    ["Complimentary Executive Business Assessment", "Take it in minutes and see your first live score.", "Take the assessment", "/assessment"],
+    ["Free 21-Day Challenge", "A daily taste of what it feels like to run with structure.", "Join the challenge", "https://command-shift-landing-amilynne-8459-amilynne-carrolls-projects.vercel.app/"],
     ["Free MasterClass", "See the full method and the Command Suite, live.", "Save my seat", "#masterclass"],
   ] as const;
   return (
@@ -688,7 +688,9 @@ function FinalCall() {
           Your business can stop running on overwhelm.
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-ivory/80">
-          Come find your clarity — and get the Command Suite to run it, on purpose, every day.
+          Come find your clarity — and get the Command Suite to run it,
+          <br />
+          on purpose, every day.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <PrimaryCTA href="#call">Book your Executive Consultation →</PrimaryCTA>

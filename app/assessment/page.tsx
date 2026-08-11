@@ -153,7 +153,7 @@ const SCALE = [
 /* ------------------------------------------------------------------ */
 
 const LINKS = {
-  challenge: "#", // 21-Day Executive Challenge signup
+  challenge: "https://command-shift-landing-amilynne-8459-amilynne-carrolls-projects.vercel.app/", // 21-Day Executive Challenge signup
   masterclass: "#", // "From Hustle to Command" MasterClass registration
   consultation: "#call", // Executive Consultation booking
 };
