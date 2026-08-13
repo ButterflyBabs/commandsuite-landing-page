@@ -172,7 +172,7 @@ function Nav() {
           <a href="#tour" className="hover:text-indigo">The Command Suite</a>
           <a href="#start" className="hover:text-indigo">Ways to start</a>
           <a
-            href="#call"
+            href="https://app.globalcontrol.io/appointment-booking/executive-consultation-lccs"
             className="rounded-full bg-gold px-5 py-2 font-semibold text-indigo-deep hover:bg-gold-soft"
           >
             Book an Executive Consultation
@@ -211,7 +211,7 @@ function TransformationStatement() {
           Architect-led executive coaching + a working Command Suite
         </p>
         <h1 className="font-serif text-4xl font-semibold leading-[1.1] text-balance sm:text-5xl md:text-6xl">
-          From white-knuckling a scattered hustle to hard-won harmony.
+          From white-knuckling a scattered hustle to a soft landing.
         </h1>
         <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-ivory/80">
           One Command Suite where your mission, brand, and business finally work as one — on purpose —
@@ -219,7 +219,7 @@ function TransformationStatement() {
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <PrimaryCTA href="/assessment">Take your Executive Business Assessment →</PrimaryCTA>
-          <GhostCTA href="#call" light>
+          <GhostCTA href="https://app.globalcontrol.io/appointment-booking/executive-consultation-lccs" light>
             Book an Executive Consultation
           </GhostCTA>
         </div>
@@ -368,7 +368,7 @@ function Proof() {
       </div>
 
       <div className="mt-12 flex flex-col items-center justify-center gap-4 px-6 sm:flex-row">
-        <PrimaryCTA href="#call">Book your Executive Consultation →</PrimaryCTA>
+        <PrimaryCTA href="https://app.globalcontrol.io/appointment-booking/executive-consultation-lccs">Book your Executive Consultation →</PrimaryCTA>
         <GhostCTA href="/assessment" light>
           Take the complimentary assessment and see your first score
         </GhostCTA>
@@ -426,7 +426,7 @@ function BeforeAfter() {
         </div>
       </div>
       <p className="mx-auto mt-10 max-w-2xl px-6 text-center font-serif text-xl text-plum text-balance">
-        This is what harmony looks like: not less ambition — less friction, and finally working
+        This is what a soft landing looks like: not less ambition — less friction, and finally working
         as one.
       </p>
     </section>
@@ -621,7 +621,7 @@ function Investment() {
           Executive Consultation.
         </p>
         <div className="mt-10">
-          <PrimaryCTA href="#call">Book your Executive Consultation →</PrimaryCTA>
+          <PrimaryCTA href="https://app.globalcontrol.io/appointment-booking/executive-consultation-lccs">Book your Executive Consultation →</PrimaryCTA>
         </div>
       </div>
     </section>
@@ -693,7 +693,7 @@ function FinalCall() {
           on purpose, every day.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <PrimaryCTA href="#call">Book your Executive Consultation →</PrimaryCTA>
+          <PrimaryCTA href="https://app.globalcontrol.io/appointment-booking/executive-consultation-lccs">Book your Executive Consultation →</PrimaryCTA>
           <GhostCTA href="/assessment" light>
             Or take the complimentary assessment first
           </GhostCTA>
