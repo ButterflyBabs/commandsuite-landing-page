@@ -16,7 +16,7 @@ const IMG = {
   planning: `${IK}/ChatGPT%20Image%20Aug%205,%202026,%2012_30_56%20PM%20(3).png`,
 };
 
-const CHALLENGE_URL = "https://command-shift-landing-amilynne-8459-amilynne-carrolls-projects.vercel.app/";
+const CHALLENGE_URL = "https://command-shift-landing.vercel.app/";
 
 /* ------------------------------------------------------------------ */
 /*  Brand motifs & icons                                               */
@@ -633,7 +633,7 @@ function Investment() {
 function WaysToStart() {
   const doors = [
     ["Complimentary Executive Business Assessment", "Take it in minutes and see your first live score.", "Take the assessment", "/assessment"],
-    ["Free 21-Day Challenge", "A daily taste of what it feels like to run with structure.", "Join the challenge", "https://command-shift-landing-amilynne-8459-amilynne-carrolls-projects.vercel.app/"],
+    ["Free 21-Day Challenge", "A daily taste of what it feels like to run with structure.", "Join the challenge", "https://command-shift-landing.vercel.app/"],
     ["Free MasterClass", "See the full method and the Command Suite, live.", "Save my seat", "#masterclass"],
   ] as const;
   return (
