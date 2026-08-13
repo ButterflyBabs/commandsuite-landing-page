@@ -16,6 +16,8 @@ const IMG = {
   planning: `${IK}/ChatGPT%20Image%20Aug%205,%202026,%2012_30_56%20PM%20(3).png`,
 };
 
+const CHALLENGE_URL = "https://command-shift-landing-amilynne-8459-amilynne-carrolls-projects.vercel.app/";
+
 /* ------------------------------------------------------------------ */
 /*  Brand motifs & icons                                               */
 /* ------------------------------------------------------------------ */
@@ -219,6 +221,9 @@ function TransformationStatement() {
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <PrimaryCTA href="/assessment">Take your Executive Business Assessment →</PrimaryCTA>
+          <GhostCTA href={CHALLENGE_URL} light>
+            Join the free 21-Day Challenge →
+          </GhostCTA>
           <GhostCTA href="https://app.globalcontrol.io/appointment-booking/executive-consultation-lccs" light>
             Book an Executive Consultation
           </GhostCTA>
@@ -351,11 +356,8 @@ function Proof() {
         />
       </div>
 
-      {/* Tour the cockpit — module gallery */}
-      <p className="mx-auto mt-14 mb-6 max-w-3xl px-6 text-center font-serif text-2xl text-gold">
-        Take a tour of the cockpit
-      </p>
-      <div className="mx-auto grid max-w-6xl gap-5 px-6 sm:grid-cols-2">
+      {/* Module gallery */}
+      <div className="mx-auto mt-14 grid max-w-6xl gap-5 px-6 sm:grid-cols-2">
         {modules.map(([src, alt]) => (
           <figure
             key={alt}
@@ -694,6 +696,9 @@ function FinalCall() {
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <PrimaryCTA href="https://app.globalcontrol.io/appointment-booking/executive-consultation-lccs">Book your Executive Consultation →</PrimaryCTA>
+          <GhostCTA href={CHALLENGE_URL} light>
+            Join the free 21-Day Challenge
+          </GhostCTA>
           <GhostCTA href="/assessment" light>
             Or take the complimentary assessment first
           </GhostCTA>
