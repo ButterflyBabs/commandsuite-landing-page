@@ -213,7 +213,7 @@ function TransformationStatement() {
           Architect-led executive coaching + a working Command Suite
         </p>
         <h1 className="font-serif text-4xl font-semibold leading-[1.1] text-balance sm:text-5xl md:text-6xl">
-          From white-knuckling a scattered hustle to a soft landing.
+          From white-knuckling a scattered hustle to hard-won harmony.
         </h1>
         <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-ivory/80">
           One Command Suite where your mission, brand, and business finally work as one — on purpose —
@@ -428,7 +428,7 @@ function BeforeAfter() {
         </div>
       </div>
       <p className="mx-auto mt-10 max-w-2xl px-6 text-center font-serif text-xl text-plum text-balance">
-        This is what a soft landing looks like: not less ambition — less friction, and finally working
+        This is what hard-won harmony looks like: not less ambition — less friction, and finally working
         as one.
       </p>
     </section>
@@ -634,7 +634,7 @@ function WaysToStart() {
   const doors = [
     ["Complimentary Executive Business Assessment", "Take it in minutes and see your first live score.", "Take the assessment", "/assessment"],
     ["Free 21-Day Challenge", "A daily taste of what it feels like to run with structure.", "Join the challenge", "https://command-shift-landing.vercel.app/"],
-    ["Free MasterClass", "See the full method and the Command Suite, live.", "Save my seat", "#masterclass"],
+    ["Free MasterClass", "See the full method and the Command Suite, live.", "Save my seat", "/masterclass"],
   ] as const;
   return (
     <section id="start" className="bg-ivory py-24">

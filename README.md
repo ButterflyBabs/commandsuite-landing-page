@@ -6,7 +6,7 @@ Built with **Next.js (App Router)** + **Tailwind CSS**, deployed on **Vercel** â
 
 ## Positioning (do not drift)
 
-This is **not** SaaS. Never describe it as an "app," "tool," "platform," or "software with coaching." Lead with alignment and the coaching relationship; the Command Suite is where it gets implemented. Anchor words: *alignment, Truth, mission, legacy, command center / cockpit, Alignment Architect, soft landing, on purpose.*
+This is **not** SaaS. Never describe it as an "app," "tool," "platform," or "software with coaching." Lead with alignment and the coaching relationship; the Command Suite is where it gets implemented. Anchor words: *alignment, Truth, mission, legacy, command center / cockpit, Alignment Architect, hard-won harmony, on purpose.* (Never use "soft landing" â€” it's retired; always say "hard-won harmony.")
 
 ## Local development
 
