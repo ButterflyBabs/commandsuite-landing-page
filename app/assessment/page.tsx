@@ -154,7 +154,7 @@ const SCALE = [
 
 const LINKS = {
   challenge: "https://command-shift-landing.vercel.app/", // 21-Day Executive Challenge signup
-  masterclass: "/masterclass", // "From Hustle to Command" MasterClass registration
+  masterclass: "#", // "From Hustle to Command" MasterClass registration
   consultation: "https://app.globalcontrol.io/appointment-booking/executive-consultation-lccs", // Executive Consultation booking
 };
 
@@ -617,7 +617,7 @@ function ResultsView({
       </div>
 
       <p className="mx-auto mt-10 max-w-xl text-center font-serif text-lg text-plum">
-        From white-knuckling a scattered hustle to hard-won harmony — one system, on purpose.
+        From white-knuckling a scattered hustle to a soft landing — one system, on purpose.
       </p>
     </div>
   );

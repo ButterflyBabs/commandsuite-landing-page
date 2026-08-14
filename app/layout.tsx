@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "LifeCharter — From a scattered hustle to hard-won harmony",
+  title: "LifeCharter — From a scattered hustle to a soft landing",
   description:
     "Architect-led executive coaching paired with the LifeCharter Command Suite. Find your clarity, then run your business from one integrated system — mission, brand, and finances working as one, on purpose.",
   openGraph: {
-    title: "LifeCharter — From a scattered hustle to hard-won harmony",
+    title: "LifeCharter — From a scattered hustle to a soft landing",
     description:
       "Executive coaching plus the Command Suite — one integrated system to build, run, and grow a lasting business legacy.",
     type: "website",
