@@ -666,7 +666,9 @@ function Architect() {
       <div className="mx-auto max-w-3xl px-6 text-center">
         <Eyebrow>Meet your Alignment Architect</Eyebrow>
         <h2 className="font-serif text-3xl font-semibold leading-tight md:text-4xl">
-          You don&apos;t need another guru. You need an architect.
+          You don&apos;t need another guru.
+          <br />
+          You need an architect.
         </h2>
         <div className="mx-auto mt-10 max-w-sm overflow-hidden rounded-3xl border border-gold/40 shadow-xl shadow-indigo/10">
           <img
