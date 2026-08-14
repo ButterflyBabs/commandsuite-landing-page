@@ -634,7 +634,7 @@ function WaysToStart() {
   const doors = [
     ["Complimentary Executive Business Assessment", "Take it in minutes and see your first live score.", "Take the assessment", "/assessment"],
     ["Free 21-Day Challenge", "A daily taste of what it feels like to run with structure.", "Join the challenge", "https://command-shift-landing.vercel.app/"],
-    ["Free MasterClass", "See the full method and the Command Suite, live.", "Save my seat", "#masterclass"],
+    ["Free MasterClass", "See the full method and the Command Suite, live.", "Save my seat", "/masterclass"],
   ] as const;
   return (
     <section id="start" className="bg-ivory py-24">
@@ -668,8 +668,12 @@ function Architect() {
         <h2 className="font-serif text-3xl font-semibold leading-tight md:text-4xl">
           You don&apos;t need another guru. You need an architect.
         </h2>
-        <div className="mx-auto mt-8 flex h-28 w-28 items-center justify-center rounded-full border border-gold/40 bg-white/60">
-          <Butterfly className="h-14 w-16 text-gold" />
+        <div className="mx-auto mt-10 max-w-sm overflow-hidden rounded-3xl border border-gold/40 shadow-xl shadow-indigo/10">
+          <img
+            src="/architect.jpg"
+            alt="AmiLynne &ldquo;Babs&rdquo; Carroll, creator of LifeCharter, with her service dog"
+            className="h-auto w-full"
+          />
         </div>
         <p className="mt-8 text-lg leading-relaxed text-indigo/70">
           AmiLynne &ldquo;Babs&rdquo; Carroll is the creator of LifeCharter — an Alignment Architect, author,
