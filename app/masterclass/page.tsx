@@ -435,18 +435,38 @@ function WhoFor() {
 function Architect() {
   return (
     <section className="bg-ivory py-24">
-      <div className="mx-auto max-w-3xl px-6 text-center">
-        <Eyebrow>Your host</Eyebrow>
-        <h2 className="font-serif text-3xl font-semibold leading-tight md:text-4xl">
-          Taught live by your Alignment Architect.
-        </h2>
-        <div className="mx-auto mt-8 flex h-28 w-28 items-center justify-center rounded-full border border-gold/40 bg-white/60">
-          <Butterfly className="h-14 w-16 text-gold" />
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2">
+        {/* Bio — left */}
+        <div>
+          <Eyebrow>Your host</Eyebrow>
+          <h2 className="font-serif text-3xl font-semibold leading-tight text-indigo md:text-4xl">
+            Taught live by your Alignment Architect.
+          </h2>
+          <div className="mt-7 space-y-5 text-lg leading-relaxed text-indigo/75">
+            <p>
+              <strong className="font-semibold text-indigo">AmiLynne &ldquo;Babs&rdquo; Carroll</strong> is the
+              creator of LifeCharter — an Alignment Architect, author, and speaker who helps people move from
+              fear-driven hustle into clarity, purpose, and aligned action.
+            </p>
+            <p>
+              She built LifeCharter around one core conviction: you don&apos;t need more hustle, you need deeper
+              alignment. For Babs, command isn&apos;t about control. It&apos;s about seeing clearly, choosing from
+              Truth, and building a life and business that move <em>on purpose</em>.
+            </p>
+          </div>
+          <p className="mt-7 font-serif text-xl text-plum">Head Up — Wings Out. 🦋</p>
         </div>
-        <p className="mt-8 text-lg leading-relaxed text-indigo/70">
-          [Your bio goes here — a few grounded lines on who you are, why you built LifeCharter, and the
-          Truth-over-fear conviction behind the shift from hustle to command. Warm, credible, a little spiritual.]
-        </p>
+
+        {/* Photo — right */}
+        <figure className="order-first md:order-last">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/architect-babs.jpg"
+            alt="AmiLynne &ldquo;Babs&rdquo; Carroll on stage with her service dog — creator of LifeCharter and your Alignment Architect."
+            loading="lazy"
+            className="w-full rounded-3xl border border-gold/30 shadow-soft"
+          />
+        </figure>
       </div>
     </section>
   );
