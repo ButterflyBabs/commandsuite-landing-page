@@ -137,16 +137,16 @@ function Divider() {
 
 function Nav() {
   return (
-    <header className="sticky top-0 z-30 border-b border-ivory/10 bg-indigo-deep/95 backdrop-blur">
+    <header className="sticky top-0 z-30 border-b border-indigo/10 bg-ivory/95 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="/" className="flex items-center gap-2 text-ivory">
+        <a href="/" className="flex items-center gap-2 text-indigo">
           <Compass className="h-6 w-6 text-gold" />
           <span className="font-serif text-lg font-semibold tracking-wide">LifeCharter</span>
         </a>
-        <div className="hidden items-center gap-8 text-sm font-medium text-ivory/80 md:flex">
-          <a href="#method" className="hover:text-ivory">The method</a>
-          <a href="#build" className="hover:text-ivory">What you&apos;ll build</a>
-          <a href="#faq" className="hover:text-ivory">FAQ</a>
+        <div className="hidden items-center gap-8 text-sm font-medium text-indigo/80 md:flex">
+          <a href="#method" className="hover:text-indigo">The method</a>
+          <a href="#build" className="hover:text-indigo">What you&apos;ll build</a>
+          <a href="#faq" className="hover:text-indigo">FAQ</a>
         </div>
         <a
           href="#register"
@@ -165,45 +165,42 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="bg-watercolor-deep relative overflow-hidden text-ivory">
+    <section id="top" className="bg-ivory">
       <Nav />
-      <Butterfly className="pointer-events-none absolute -right-12 top-24 h-64 w-64 animate-floaty text-gold/15" />
-      <Compass className="pointer-events-none absolute -left-20 bottom-0 h-80 w-80 text-lavender/10" />
-      <div className="relative mx-auto max-w-4xl px-6 py-20 text-center animate-fadeUp sm:py-24">
-        <Eyebrow light>Free Live MasterClass · {SESSION.duration}</Eyebrow>
-        <h1 className="font-serif text-4xl font-semibold leading-[1.05] text-balance sm:text-5xl md:text-6xl">
-          From Hustle to Command
-        </h1>
-        <p className="mx-auto mt-6 max-w-2xl font-serif text-xl font-medium italic text-gold-soft text-balance sm:text-2xl">
-          You don&apos;t have a hustle problem — you have an alignment problem.
-        </p>
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ivory/80">
-          In 90 minutes, see the whole method that takes you from white-knuckling a scattered hustle to{" "}
-          <strong className="font-semibold text-ivory">hard-won harmony</strong> — one command center where your
-          mission, brand, and business finally point the same direction, on purpose. And you won&apos;t just watch:
-          you&apos;ll build your first command move live, in the room.
-        </p>
+      {/* Brand hero image (carries the headline + tagline) */}
+      <h1 className="sr-only">
+        The Command Shift MasterClass — From Hustle to Command
+      </h1>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/masterclass-hero.jpg"
+        alt="The Command Shift MasterClass — From Hustle to Command. A 90-minute training for founders, coaches, and leaders ready to move from a scattered hustle to hard-won harmony. See the whole method. Build your command center. Lead on purpose."
+        className="mx-auto block w-full max-w-[1600px]"
+      />
+    </section>
+  );
+}
 
-        {/* When */}
-        <div className="mx-auto mt-10 flex max-w-md flex-col items-center gap-1 rounded-2xl border border-ivory/15 bg-ivory/5 px-6 py-5">
-          <p className="font-serif text-xl font-semibold text-ivory">{SESSION.dateLong}</p>
-          <p className="text-ivory/75">
-            {SESSION.time} · Live, online
-          </p>
+/* When + countdown, in a band directly beneath the hero image */
+function SessionBar() {
+  return (
+    <section className="bg-watercolor-soft py-14 sm:py-16">
+      <div className="mx-auto max-w-3xl px-6 text-center animate-fadeUp">
+        <Eyebrow>Free Live MasterClass · {SESSION.duration}</Eyebrow>
+        <div className="mx-auto flex max-w-md flex-col items-center gap-1 rounded-2xl border border-indigo/10 bg-white/70 px-6 py-5 shadow-card">
+          <p className="font-serif text-2xl font-semibold text-indigo">{SESSION.dateLong}</p>
+          <p className="text-indigo/70">{SESSION.time} · Live, online</p>
         </div>
 
-        {/* Countdown */}
         <div className="mt-8">
-          <Countdown />
+          <Countdown light />
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <PrimaryCTA href="#register">Save my seat →</PrimaryCTA>
-          <GhostCTA href="#method" light>
-            See what we&apos;ll cover
-          </GhostCTA>
+          <GhostCTA href="#method">See what we&apos;ll cover</GhostCTA>
         </div>
-        <p className="mt-5 text-sm text-ivory/55">
+        <p className="mt-5 text-sm text-indigo/55">
           Taught live by your Alignment Architect. Free to attend — a replay goes to everyone who registers.
         </p>
       </div>
@@ -644,6 +641,7 @@ export default function MasterclassPage() {
     <main>
       <StructuredData />
       <Hero />
+      <SessionBar />
       <Reframe />
       <Divider />
       <Method />

@@ -28,7 +28,7 @@ function parts(ms: number) {
 /*  Countdown                                                          */
 /* ------------------------------------------------------------------ */
 
-export function Countdown() {
+export function Countdown({ light = false }: { light?: boolean }) {
   // null until mounted, to avoid a hydration mismatch
   const [now, setNow] = useState<number | null>(null);
 
@@ -40,12 +40,16 @@ export function Countdown() {
 
   if (now === null) {
     // Static placeholder that matches the mounted layout
-    return <CountdownFrame days="--" hours="--" minutes="--" seconds="--" />;
+    return <CountdownFrame days="--" hours="--" minutes="--" seconds="--" light={light} />;
   }
 
   if (now >= SESSION_END_UTC_MS) {
     return (
-      <p className="mt-2 inline-block rounded-full border border-ivory/25 bg-ivory/10 px-6 py-3 text-sm font-semibold text-ivory">
+      <p
+        className={`mt-2 inline-block rounded-full px-6 py-3 text-sm font-semibold ${
+          light ? "border border-indigo/20 bg-white/70 text-indigo" : "border border-ivory/25 bg-ivory/10 text-ivory"
+        }`}
+      >
         This session has wrapped — save your seat below and we&apos;ll tell you the moment the next one is scheduled.
       </p>
     );
@@ -67,6 +71,7 @@ export function Countdown() {
       hours={pad(p.hours)}
       minutes={pad(p.minutes)}
       seconds={pad(p.seconds)}
+      light={light}
     />
   );
 }
@@ -76,11 +81,13 @@ function CountdownFrame({
   hours,
   minutes,
   seconds,
+  light = false,
 }: {
   days: string;
   hours: string;
   minutes: string;
   seconds: string;
+  light?: boolean;
 }) {
   const cells: [string, string][] = [
     [days, "days"],
@@ -88,15 +95,20 @@ function CountdownFrame({
     [minutes, "min"],
     [seconds, "sec"],
   ];
+  const cellClass = light
+    ? "border-indigo/10 bg-white/70 shadow-card"
+    : "border-ivory/20 bg-ivory/10 backdrop-blur";
+  const numClass = light ? "text-indigo" : "text-ivory";
+  const labelClass = light ? "text-indigo/50" : "text-ivory/60";
   return (
     <div className="flex items-stretch justify-center gap-3 sm:gap-4" aria-label="Time until the MasterClass begins">
       {cells.map(([val, label]) => (
         <div
           key={label}
-          className="flex min-w-[64px] flex-col items-center rounded-2xl border border-ivory/20 bg-ivory/10 px-3 py-3 backdrop-blur sm:min-w-[80px]"
+          className={`flex min-w-[64px] flex-col items-center rounded-2xl border px-3 py-3 sm:min-w-[80px] ${cellClass}`}
         >
-          <span className="font-serif text-3xl font-semibold leading-none text-ivory sm:text-4xl">{val}</span>
-          <span className="mt-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.2em] text-ivory/60">{label}</span>
+          <span className={`font-serif text-3xl font-semibold leading-none sm:text-4xl ${numClass}`}>{val}</span>
+          <span className={`mt-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.2em] ${labelClass}`}>{label}</span>
         </div>
       ))}
     </div>
