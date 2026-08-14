@@ -14,6 +14,9 @@ const SESSION_UTC_MS = Date.UTC(2026, 7, 20, 23, 0, 0);
 // 90-minute session
 const SESSION_END_UTC_MS = SESSION_UTC_MS + 90 * 60 * 1000;
 
+// Live Zoom room for the MasterClass
+const ZOOM_URL = "https://us02web.zoom.us/j/89086652419?pwd=QIUda5GIEwqHWmMhOKhmys27FnhJ7K.1";
+
 function parts(ms: number) {
   const total = Math.max(0, Math.floor(ms / 1000));
   return {
@@ -154,9 +157,20 @@ export function RegisterForm() {
           {firstName ? `You're in, ${firstName}.` : "You're in."}
         </h3>
         <p className="mx-auto mt-3 max-w-md text-indigo/75">
-          Your seat for <strong>From Hustle to Command</strong> is saved. Check your email for the
-          confirmation and the join link — we&apos;ll send a reminder before we go live on{" "}
-          <strong>Thursday, August 20 at 5:00 PM Mountain</strong>.
+          Your seat for <strong>From Hustle to Command</strong> is saved. We go live{" "}
+          <strong>Thursday, August 20 at 5:00 PM Mountain</strong> — here&apos;s your room link (we&apos;ve emailed
+          it too, and we&apos;ll send a reminder before we start).
+        </p>
+        <a
+          href={ZOOM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 inline-flex items-center justify-center rounded-full bg-gold px-8 py-4 text-sm font-semibold tracking-wide text-indigo-deep shadow-soft transition hover:bg-gold-soft"
+        >
+          Join the Zoom room →
+        </a>
+        <p className="mt-3 text-xs text-indigo/50">
+          Tip: save this link — it&apos;s the same room on the day of the class.
         </p>
         <p className="mt-6 font-serif text-lg text-plum">Head Up — Wings Out. 🦋</p>
       </div>
