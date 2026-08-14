@@ -282,25 +282,25 @@ function Reframe() {
 }
 
 /* ================================================================== */
-/*  The method — the three-week arc                                    */
+/*  The method — the three-phase arc                                   */
 /* ================================================================== */
 
 function Method() {
-  const weeks = [
+  const phases = [
     {
-      n: "Week 1",
+      n: "Phase 1",
       title: "Truth & Clarity",
       tag: "See it honestly",
       body: "Get radically honest about where the business stands and why it exists.",
     },
     {
-      n: "Week 2",
+      n: "Phase 2",
       title: "Build the Engine",
       tag: "Turn clarity into structure",
       body: "Encode that Truth into offer, revenue, systems, voice, position, and a daily rhythm.",
     },
     {
-      n: "Week 3",
+      n: "Phase 3",
       title: "Live in Command",
       tag: "Consolidate, lead, make it permanent",
       body: "Bring it into one command center and one leader — built to last.",
@@ -314,17 +314,17 @@ function Method() {
           The whole method, in one sitting.
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-indigo/80">
-          You&apos;ll get a fly-over of all 21 aligned moves that make the shift — organized into three weeks — and
+          You&apos;ll get a fly-over of all 21 aligned moves that make the shift — organized into three phases — and
           then we&apos;ll go deep on the ones that change everything, and actually <em>do</em> them together.
         </p>
       </div>
       <div className="mx-auto mt-12 grid max-w-5xl gap-6 px-6 md:grid-cols-3">
-        {weeks.map((w) => (
-          <div key={w.n} className="card-hover flex flex-col rounded-3xl bg-white/70 p-8 shadow-card">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">{w.n}</p>
-            <h3 className="mt-3 font-serif text-2xl font-semibold text-indigo">{w.title}</h3>
-            <p className="mt-1 text-sm font-medium italic text-plum">{w.tag}</p>
-            <p className="mt-4 leading-relaxed text-indigo/75">{w.body}</p>
+        {phases.map((p) => (
+          <div key={p.n} className="card-hover flex flex-col rounded-3xl bg-white/70 p-8 shadow-card">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">{p.n}</p>
+            <h3 className="mt-3 font-serif text-2xl font-semibold text-indigo">{p.title}</h3>
+            <p className="mt-1 text-sm font-medium italic text-plum">{p.tag}</p>
+            <p className="mt-4 leading-relaxed text-indigo/75">{p.body}</p>
           </div>
         ))}
       </div>
