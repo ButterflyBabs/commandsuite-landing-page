@@ -224,8 +224,8 @@ function TransformationStatement() {
           <GhostCTA href={CHALLENGE_URL} light>
             Join the free 21-Day Challenge →
           </GhostCTA>
-          <GhostCTA href="https://app.globalcontrol.io/appointment-booking/executive-consultation-lccs" light>
-            Book an Executive Consultation
+          <GhostCTA href="/masterclass" light>
+            Join our upcoming MasterClass
           </GhostCTA>
         </div>
       </div>
@@ -370,7 +370,7 @@ function Proof() {
       </div>
 
       <div className="mt-12 flex flex-col items-center justify-center gap-4 px-6 sm:flex-row">
-        <PrimaryCTA href="https://app.globalcontrol.io/appointment-booking/executive-consultation-lccs">Book your Executive Consultation →</PrimaryCTA>
+        <PrimaryCTA href="/masterclass">Join our upcoming MasterClass →</PrimaryCTA>
         <GhostCTA href="/assessment" light>
           Take the complimentary assessment and see your first score
         </GhostCTA>
@@ -619,11 +619,11 @@ function Investment() {
         <p className="mx-auto mt-6 max-w-xl leading-relaxed text-ivory/75">
           Which level fits you depends on how much hands-on help you want — from self-driven in the
           cohort, to a monthly hand on the wheel, to having it architected right alongside you.
-          That&apos;s a conversation, not a checkout — we&apos;ll find the right fit together on your
-          Executive Consultation.
+          That&apos;s a conversation, not a checkout — come to our upcoming MasterClass and
+          we&apos;ll show you exactly how it fits.
         </p>
         <div className="mt-10">
-          <PrimaryCTA href="https://app.globalcontrol.io/appointment-booking/executive-consultation-lccs">Book your Executive Consultation →</PrimaryCTA>
+          <PrimaryCTA href="/masterclass">Join our upcoming MasterClass →</PrimaryCTA>
         </div>
       </div>
     </section>
@@ -641,7 +641,7 @@ function WaysToStart() {
       <div className="mx-auto max-w-3xl px-6 text-center">
         <Eyebrow>Ways to start</Eyebrow>
         <h2 className="font-serif text-3xl font-semibold leading-tight md:text-4xl">
-          Not ready for a consultation? Start with a doorway.
+          Not ready to dive in? Start with a doorway.
         </h2>
       </div>
       <div className="mx-auto mt-12 grid max-w-5xl gap-6 px-6 md:grid-cols-3">
@@ -706,7 +706,7 @@ function FinalCall() {
           on purpose, every day.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <PrimaryCTA href="https://app.globalcontrol.io/appointment-booking/executive-consultation-lccs">Book your Executive Consultation →</PrimaryCTA>
+          <PrimaryCTA href="/masterclass">Join our upcoming MasterClass →</PrimaryCTA>
           <GhostCTA href={CHALLENGE_URL} light>
             Join the free 21-Day Challenge
           </GhostCTA>
