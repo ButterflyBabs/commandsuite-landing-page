@@ -220,13 +220,13 @@ function TransformationStatement() {
           so you can build a legacy instead of just surviving the next launch.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <GhostCTA href="/assessment" light>
-            Take your Executive Business Assessment →
-          </GhostCTA>
+          <PrimaryCTA href="/masterclass">Join our upcoming MasterClass →</PrimaryCTA>
           <GhostCTA href={CHALLENGE_URL} light>
             Join the free 21-Day Challenge →
           </GhostCTA>
-          <PrimaryCTA href="/masterclass">Join our upcoming MasterClass →</PrimaryCTA>
+          <GhostCTA href="/assessment" light>
+            Take your Executive Business Assessment →
+          </GhostCTA>
         </div>
       </div>
     </section>
