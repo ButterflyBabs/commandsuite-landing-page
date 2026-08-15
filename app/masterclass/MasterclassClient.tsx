@@ -1,18 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { currentSession } from "./sessions";
 
 /* ------------------------------------------------------------------ */
 /*  Session timing                                                     */
-/*  Thursday, August 20, 2026 · 5:00 PM Mountain (MDT, UTC-6)          */
-/*  Fixed as a UTC instant so the countdown is correct for every       */
-/*  viewer, in any timezone.                                           */
+/*  Driven by the schedule in ./sessions.ts. When a session ends the   */
+/*  countdown rolls to the next one by itself. Times are compared as   */
+/*  UTC instants, so the countdown is correct in any viewer timezone.  */
 /* ------------------------------------------------------------------ */
-
-// 2026-08-20 17:00 -06:00  ==  2026-08-20 23:00 UTC
-const SESSION_UTC_MS = Date.UTC(2026, 7, 20, 23, 0, 0);
-// 90-minute session
-const SESSION_END_UTC_MS = SESSION_UTC_MS + 90 * 60 * 1000;
 
 // Live Zoom room for the MasterClass
 const ZOOM_URL = "https://us02web.zoom.us/j/89086652419?pwd=QIUda5GIEwqHWmMhOKhmys27FnhJ7K.1";
@@ -46,19 +42,9 @@ export function Countdown({ light = false }: { light?: boolean }) {
     return <CountdownFrame days="--" hours="--" minutes="--" seconds="--" light={light} />;
   }
 
-  if (now >= SESSION_END_UTC_MS) {
-    return (
-      <p
-        className={`mt-2 inline-block rounded-full px-6 py-3 text-sm font-semibold ${
-          light ? "border border-indigo/20 bg-white/70 text-indigo" : "border border-ivory/25 bg-ivory/10 text-ivory"
-        }`}
-      >
-        This session has wrapped — save your seat below and we&apos;ll tell you the moment the next one is scheduled.
-      </p>
-    );
-  }
+  const session = currentSession(now);
 
-  if (now >= SESSION_UTC_MS) {
+  if (now >= session.startMs) {
     return (
       <p className="mt-2 inline-block rounded-full bg-gold px-6 py-3 text-sm font-semibold text-indigo-deep">
         ● We&apos;re live now — check your email for the room link.
@@ -66,7 +52,7 @@ export function Countdown({ light = false }: { light?: boolean }) {
     );
   }
 
-  const p = parts(SESSION_UTC_MS - now);
+  const p = parts(session.startMs - now);
   const pad = (n: number) => String(n).padStart(2, "0");
   return (
     <CountdownFrame

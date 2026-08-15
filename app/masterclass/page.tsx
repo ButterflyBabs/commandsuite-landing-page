@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { Countdown, RegisterForm } from "./MasterclassClient";
+import { currentSession } from "./sessions";
 
 /* ================================================================== */
 /*  SEO                                                                */
@@ -44,13 +45,11 @@ export const viewport: Viewport = {
 /*  Session details                                                    */
 /* ================================================================== */
 
-const SESSION = {
-  dateLong: "Thursday, August 20, 2026",
-  time: "5:00 PM Mountain Time",
-  duration: "90 minutes",
-  isoStart: "2026-08-20T17:00:00-06:00",
-  isoEnd: "2026-08-20T18:30:00-06:00",
-};
+// Re-render at least every 5 minutes so the advertised date rolls to the next
+// session shortly after the current one ends, without needing a deploy.
+export const revalidate = 300;
+
+const SESSION = currentSession();
 
 const CHALLENGE_URL = "https://command-shift-landing.vercel.app/";
 const CONSULT_URL = "https://app.globalcontrol.io/appointment-booking/executive-consultation-lccs";
