@@ -200,8 +200,10 @@ function SessionBar() {
           <PrimaryCTA href="#register">Save my seat →</PrimaryCTA>
           <GhostCTA href="#method">See what we&apos;ll cover</GhostCTA>
         </div>
-        <p className="mt-5 text-sm text-indigo/55">
-          Taught live by your Alignment Architect. Free to attend — a replay goes to everyone who registers.
+        <p className="mt-5 text-sm leading-relaxed text-indigo/55">
+          Taught live by AmiLynne &lsquo;Babs&nbsp;🦋&rsquo; Carroll, Alignment Architect
+          <br />
+          Free to attend — a replay goes to everyone who registers
         </p>
       </div>
     </section>
