@@ -220,13 +220,13 @@ function TransformationStatement() {
           so you can build a legacy instead of just surviving the next launch.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <PrimaryCTA href="/assessment">Take your Executive Business Assessment →</PrimaryCTA>
+          <GhostCTA href="/assessment" light>
+            Take your Executive Business Assessment →
+          </GhostCTA>
           <GhostCTA href={CHALLENGE_URL} light>
             Join the free 21-Day Challenge →
           </GhostCTA>
-          <GhostCTA href="/masterclass" light>
-            Join our upcoming MasterClass
-          </GhostCTA>
+          <PrimaryCTA href="/masterclass">Join our upcoming MasterClass →</PrimaryCTA>
         </div>
       </div>
     </section>
@@ -632,9 +632,9 @@ function Investment() {
 
 function WaysToStart() {
   const doors = [
-    ["Complimentary Executive Business Assessment", "Take it in minutes and see your first live score.", "Take the assessment", "/assessment"],
-    ["Free 21-Day Challenge", "A daily taste of what it feels like to run with structure.", "Join the challenge", "https://command-shift-landing.vercel.app/"],
     ["Free MasterClass", "See the full method and the Command Suite, live.", "Save my seat", "/masterclass"],
+    ["Free 21-Day Challenge", "A daily taste of what it feels like to run with structure.", "Join the challenge", "https://command-shift-landing.vercel.app/"],
+    ["Complimentary Executive Business Assessment", "Take it in minutes and see your first live score.", "Take the assessment", "/assessment"],
   ] as const;
   return (
     <section id="start" className="bg-ivory py-24">
