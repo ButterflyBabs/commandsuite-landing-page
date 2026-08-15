@@ -155,7 +155,7 @@ const SCALE = [
 const LINKS = {
   challenge: "https://command-shift-landing.vercel.app/", // 21-Day Executive Challenge signup
   masterclass: "/masterclass", // "From Hustle to Command" MasterClass registration
-  consultation: "https://app.globalcontrol.io/appointment-booking/executive-consultation-lccs", // Executive Consultation booking
+  consultation: "https://lccs-lifecharter-booking.vercel.app", // Executive Consultation booking
 };
 
 /* ------------------------------------------------------------------ */

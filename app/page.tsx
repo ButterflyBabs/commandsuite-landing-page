@@ -174,7 +174,7 @@ function Nav() {
           <a href="#tour" className="hover:text-indigo">The Command Suite</a>
           <a href="#start" className="hover:text-indigo">Ways to start</a>
           <a
-            href="https://app.globalcontrol.io/appointment-booking/executive-consultation-lccs"
+            href="https://lccs-lifecharter-booking.vercel.app"
             className="rounded-full bg-gold px-5 py-2 font-semibold text-indigo-deep hover:bg-gold-soft"
           >
             Book an Executive Consultation
