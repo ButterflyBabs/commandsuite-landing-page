@@ -44,6 +44,19 @@ export function Countdown({ light = false }: { light?: boolean }) {
 
   const session = currentSession(now);
 
+  // The run has finished. Say so, and keep collecting emails for the next one.
+  if (!session) {
+    return (
+      <p
+        className={`mt-2 inline-block rounded-full px-6 py-3 text-sm font-semibold ${
+          light ? "border border-indigo/20 bg-white/70 text-indigo" : "border border-ivory/25 bg-ivory/10 text-ivory"
+        }`}
+      >
+        Next dates announced soon — leave your details below and you&apos;ll hear first.
+      </p>
+    );
+  }
+
   if (now >= session.startMs) {
     return (
       <p className="mt-2 inline-block rounded-full bg-gold px-6 py-3 text-sm font-semibold text-indigo-deep">
@@ -113,6 +126,7 @@ export function RegisterForm() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [state, setState] = useState<"idle" | "busy" | "done" | "error">("idle");
+  const session = currentSession();
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -143,9 +157,15 @@ export function RegisterForm() {
           {firstName ? `You're in, ${firstName}.` : "You're in."}
         </h3>
         <p className="mx-auto mt-3 max-w-md text-indigo/75">
-          Your seat for <strong>From Hustle to Command</strong> is saved. We go live{" "}
-          <strong>Thursday, August 20 at 5:00 PM Mountain</strong> — here&apos;s your room link (we&apos;ve emailed
-          it too, and we&apos;ll send a reminder before we start).
+          Your seat for <strong>From Hustle to Command</strong> is saved.{" "}
+          {session ? (
+            <>
+              We go live <strong>{session.dateLong} at {session.time}</strong> — here&apos;s your room link (we&apos;ve
+              emailed it too, and we&apos;ll send a reminder before we start).
+            </>
+          ) : (
+            <>We&apos;ll email you the date and room link as soon as the next session is scheduled.</>
+          )}
         </p>
         <a
           href={ZOOM_URL}

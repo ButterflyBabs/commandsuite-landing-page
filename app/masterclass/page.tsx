@@ -4,6 +4,24 @@ import { Countdown, RegisterForm } from "./MasterclassClient";
 import { currentSession } from "./sessions";
 
 /* ================================================================== */
+/*  Session details                                                    */
+/* ================================================================== */
+
+// Re-render at least every 5 minutes so the advertised date rolls to the next
+// session shortly after the current one ends, without needing a deploy.
+export const revalidate = 300;
+
+const SESSION = currentSession();
+
+// When the run has finished there is no date to show. The page still works —
+// it just stops naming a session, rather than advertising one that isn't real.
+const DATE_LINE = SESSION ? SESSION.dateLong : "Next dates announced soon";
+const TIME_LINE = SESSION ? `${SESSION.time} · Live, online` : "Thursdays · 5:00 PM Mountain · Live, online";
+const DURATION_LINE = SESSION ? SESSION.duration : "90 minutes";
+const SESSION_LINE = SESSION ? `${SESSION.dateLong} at ${SESSION.time}.` : "New dates announced soon.";
+const SESSION_LINE_OG = SESSION ? `${SESSION.dateLong} · ${SESSION.time}.` : "New dates announced soon.";
+
+/* ================================================================== */
 /*  SEO                                                                */
 /* ================================================================== */
 
@@ -12,7 +30,7 @@ const SITE = "https://commandsuite-landing-page.vercel.app";
 export const metadata: Metadata = {
   title: "From Hustle to Command — Free Live MasterClass | LifeCharter",
   description:
-    "A free 90-minute live training with the Alignment Architect. You don't have a hustle problem — you have an alignment problem. See the whole method that takes you from a scattered hustle to hard-won harmony, and build your first command move live. Thursday, August 20, 2026 at 5:00 PM Mountain.",
+    `A free 90-minute live training with the Alignment Architect. You don't have a hustle problem — you have an alignment problem. See the whole method that takes you from a scattered hustle to hard-won harmony, and build your first command move live. ${SESSION_LINE}`,
   keywords: [
     "From Hustle to Command",
     "MasterClass",
@@ -31,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "From Hustle to Command — Free Live MasterClass",
     description:
-      "90 minutes, live. See the full method — from a scattered hustle to hard-won harmony — and build your first command move in the room. Thursday, August 20, 2026 · 5:00 PM Mountain.",
+      `90 minutes, live. See the full method — from a scattered hustle to hard-won harmony — and build your first command move in the room. ${SESSION_LINE_OG}`,
     type: "website",
     url: `${SITE}/masterclass`,
   },
@@ -40,16 +58,6 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   themeColor: "#1F315B",
 };
-
-/* ================================================================== */
-/*  Session details                                                    */
-/* ================================================================== */
-
-// Re-render at least every 5 minutes so the advertised date rolls to the next
-// session shortly after the current one ends, without needing a deploy.
-export const revalidate = 300;
-
-const SESSION = currentSession();
 
 const CHALLENGE_URL = "https://command-shift-landing.vercel.app/";
 const CONSULT_URL = "https://app.globalcontrol.io/appointment-booking/executive-consultation-lccs";
@@ -185,10 +193,10 @@ function SessionBar() {
   return (
     <section className="bg-watercolor-soft py-14 sm:py-16">
       <div className="mx-auto max-w-3xl px-6 text-center animate-fadeUp">
-        <Eyebrow>Free Live MasterClass · {SESSION.duration}</Eyebrow>
+        <Eyebrow>Free Live MasterClass · {DURATION_LINE}</Eyebrow>
         <div className="mx-auto flex max-w-md flex-col items-center gap-1 rounded-2xl border border-indigo/10 bg-white/70 px-6 py-5 shadow-card">
-          <p className="font-serif text-2xl font-semibold text-indigo">{SESSION.dateLong}</p>
-          <p className="text-indigo/70">{SESSION.time} · Live, online</p>
+          <p className="font-serif text-2xl font-semibold text-indigo">{DATE_LINE}</p>
+          <p className="text-indigo/70">{TIME_LINE}</p>
         </div>
 
         <div className="mt-8">
@@ -488,7 +496,7 @@ function Register() {
           Come see the whole shift — and start building it live.
         </h2>
         <p className="mx-auto mt-5 max-w-lg text-lg leading-relaxed text-ivory/80">
-          {SESSION.dateLong} · {SESSION.time} · Live &amp; online. Free to attend, with a replay for everyone who
+          {DATE_LINE} · {SESSION ? SESSION.time : "5:00 PM Mountain"} · Live &amp; online. Free to attend, with a replay for everyone who
           registers.
         </p>
         <div className="mx-auto mt-10 max-w-lg text-left">
@@ -607,8 +615,8 @@ function StructuredData() {
     name: "From Hustle to Command — Free MasterClass",
     description:
       "A free 90-minute live training: see the whole method that takes you from a scattered hustle to hard-won harmony, and build your first command move live.",
-    startDate: SESSION.isoStart,
-    endDate: SESSION.isoEnd,
+    startDate: SESSION?.isoStart,
+    endDate: SESSION?.isoEnd,
     eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
     eventStatus: "https://schema.org/EventScheduled",
     location: {
@@ -645,9 +653,13 @@ function StructuredData() {
     })),
   };
 
+  // An Event without a start date is invalid structured data and Google flags it.
+  // Once the run is over, publish only the FAQ until new dates are scheduled.
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventLd) }} />
+      {SESSION && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventLd) }} />
+      )}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
     </>
   );
