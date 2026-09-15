@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { MetaPixel } from "./components/MetaPixel";
 
 export const metadata: Metadata = {
   title: "LifeCharter — From a scattered hustle to hard-won harmony",
@@ -28,7 +29,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <MetaPixel />
+        {children}
+      </body>
     </html>
   );
 }

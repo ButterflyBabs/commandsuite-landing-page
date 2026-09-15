@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { currentSession } from "./sessions";
+import { trackEvent } from "../lib/pixel";
 
 /* ------------------------------------------------------------------ */
 /*  Session timing                                                     */
@@ -141,6 +142,7 @@ export function RegisterForm() {
       // The route is "safe by default" — a 200 with crm:"not_configured"
       // still means the person is captured for the workflow to pick up.
       if (!res.ok) throw new Error("bad_status");
+      trackEvent("Lead", { content_name: "masterclass_registration" });
       setState("done");
     } catch {
       setState("error");

@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { trackEvent } from "../lib/pixel";
 
 /* ------------------------------------------------------------------ */
 /*  Brand mark                                                         */
@@ -268,6 +269,7 @@ export default function AssessmentPage() {
       setSubmitError("");
     } finally {
       setSubmitting(false);
+      trackEvent("CompleteRegistration", { content_name: "executive_assessment" });
       setStep(RESULTS_STEP);
     }
   }
