@@ -11,8 +11,13 @@ import { trackEvent } from "../lib/pixel";
 /*  UTC instants, so the countdown is correct in any viewer timezone.  */
 /* ------------------------------------------------------------------ */
 
-// Live Zoom room for the MasterClass
-const ZOOM_URL = "https://us02web.zoom.us/j/89086652419?pwd=QIUda5GIEwqHWmMhOKhmys27FnhJ7K.1";
+// Zoom's own registration page — the single front door now. Zoom requires
+// registration on this meeting, so this is what mints each attendee's
+// personal join link, not a shared static room URL (that would let people
+// skip registration entirely). A cron job in lifecharter-architecture polls
+// Zoom's registrant list and syncs it into Global Control's existing
+// lccs-masterclass workflow — see /api/cron/masterclass-zoom-sync there.
+const ZOOM_REGISTER_URL = "https://us02web.zoom.us/meeting/register/qHumbeSKSP-U3gsNsBHYQw";
 
 function parts(ms: number) {
   const total = Math.max(0, Math.floor(ms / 1000));
@@ -123,111 +128,18 @@ function CountdownFrame({
 /* ------------------------------------------------------------------ */
 
 export function RegisterForm() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [state, setState] = useState<"idle" | "busy" | "done" | "error">("idle");
-  const session = currentSession();
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (state === "busy") return;
-    setState("busy");
-    try {
-      const res = await fetch("/api/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, firstName, lastName, tag: "masterclass" }),
-      });
-      // The route is "safe by default" — a 200 with crm:"not_configured"
-      // still means the person is captured for the workflow to pick up.
-      if (!res.ok) throw new Error("bad_status");
-      trackEvent("Lead", { content_name: "masterclass_registration" });
-      setState("done");
-    } catch {
-      setState("error");
-    }
-  }
-
-  if (state === "done") {
-    return (
-      <div className="rounded-3xl border border-gold/40 bg-white/85 p-8 text-center shadow-soft">
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-teal/15 text-2xl text-teal">
-          ✓
-        </div>
-        <h3 className="mt-5 font-serif text-2xl font-semibold text-indigo">
-          {firstName ? `You're in, ${firstName}.` : "You're in."}
-        </h3>
-        <p className="mx-auto mt-3 max-w-md text-indigo/75">
-          Your seat for <strong>From Hustle to Command</strong> is saved.{" "}
-          {session ? (
-            <>
-              We go live <strong>{session.dateLong} at {session.time}</strong> — here&apos;s your room link (we&apos;ve
-              emailed it too, and we&apos;ll send a reminder before we start).
-            </>
-          ) : (
-            <>We&apos;ll email you the date and room link as soon as the next session is scheduled.</>
-          )}
-        </p>
-        <a
-          href={ZOOM_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-6 inline-flex items-center justify-center rounded-full bg-gold px-8 py-4 text-sm font-semibold tracking-wide text-indigo-deep shadow-soft transition hover:bg-gold-soft"
-        >
-          Join the Zoom room →
-        </a>
-        <p className="mt-3 text-xs text-indigo/50">
-          Tip: save this link — it&apos;s the same room on the day of the class.
-        </p>
-        <p className="mt-6 font-serif text-lg text-plum">Head Up — Wings Out. 🦋</p>
-      </div>
-    );
-  }
-
   return (
-    <form onSubmit={handleSubmit} className="rounded-3xl border border-indigo/10 bg-white/85 p-6 shadow-soft sm:p-8">
-      <div className="grid gap-4 sm:grid-cols-2">
-        <input
-          required
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-          placeholder="First name"
-          autoComplete="given-name"
-          className="rounded-xl border border-indigo/20 bg-white px-4 py-3 text-indigo outline-none transition focus:border-gold"
-        />
-        <input
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-          placeholder="Last name"
-          autoComplete="family-name"
-          className="rounded-xl border border-indigo/20 bg-white px-4 py-3 text-indigo outline-none transition focus:border-gold"
-        />
-      </div>
-      <input
-        required
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email address"
-        autoComplete="email"
-        className="mt-4 w-full rounded-xl border border-indigo/20 bg-white px-4 py-3 text-indigo outline-none transition focus:border-gold"
-      />
-      <button
-        type="submit"
-        disabled={state === "busy"}
-        className="mt-5 w-full rounded-full bg-gold px-8 py-4 text-sm font-semibold tracking-wide text-indigo-deep shadow-soft transition hover:bg-gold-soft disabled:opacity-60"
+    <div className="rounded-3xl border border-indigo/10 bg-white/85 p-6 text-center shadow-soft sm:p-8">
+      <a
+        href={ZOOM_REGISTER_URL}
+        onClick={() => trackEvent("Lead", { content_name: "masterclass_registration" })}
+        className="inline-flex w-full items-center justify-center rounded-full bg-gold px-8 py-4 text-sm font-semibold tracking-wide text-indigo-deep shadow-soft transition hover:bg-gold-soft"
       >
-        {state === "busy" ? "Saving your seat…" : "Save my seat →"}
-      </button>
-      {state === "error" && (
-        <p className="mt-3 text-center text-sm text-red-600">
-          Something hiccupped on our end. Please try once more — or email amilynne@amilynnecarroll.com and we&apos;ll save your seat by hand.
-        </p>
-      )}
+        Save my seat on Zoom →
+      </a>
       <p className="mt-4 text-center text-xs text-indigo/50">
-        Free to attend. We&apos;ll email the join link and occasional resources — unsubscribe anytime.
+        Free to attend. Zoom sends your personal join link and reminders — unsubscribe anytime.
       </p>
-    </form>
+    </div>
   );
 }

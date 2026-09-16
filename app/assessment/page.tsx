@@ -155,9 +155,12 @@ const SCALE = [
 
 const LINKS = {
   challenge: "https://command-shift-landing.vercel.app/", // 21-Day Executive Challenge signup
-  masterclass: "/masterclass", // "From Hustle to Command" MasterClass registration
   consultation: "https://lccommandsuite.com/schedule/website", // Executive Consultation booking — gated behind the qualification questionnaire
 };
+
+// Zoom's own registration page for the MasterClass — the single front door
+// now (see the note above ResultsView's mcPrimary/mcLink).
+const MASTERCLASS_ZOOM_REGISTER_URL = "https://us02web.zoom.us/meeting/register/qHumbeSKSP-U3gsNsBHYQw";
 
 /* ------------------------------------------------------------------ */
 /*  Scoring + recommendation                                           */
@@ -474,54 +477,31 @@ function ResultsView({
 }) {
   const band = BAND_COPY[results.band];
   const rec = results.recommendation;
-  const [mcState, setMcState] = useState<"idle" | "busy" | "done">("idle");
 
-  async function joinMasterclass() {
-    if (mcState === "busy") return;
-    setMcState("busy");
-    try {
-      await fetch("/api/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, firstName, lastName, tag: "masterclass" }),
-      });
-    } catch {
-      /* non-blocking */
-    }
-    setMcState("done");
-    if (LINKS.masterclass && LINKS.masterclass !== "#") {
-      window.location.href = LINKS.masterclass;
-    }
-  }
-
-  const registeredInline = mcState === "done" && (!LINKS.masterclass || LINKS.masterclass === "#");
-
-  const mcPrimary = registeredInline ? (
-    <p className="mt-7 inline-block rounded-full bg-teal/10 px-7 py-4 text-sm font-semibold text-teal">
-      ✓ You&apos;re in — your seat is saved. Check your email for the details.
-    </p>
-  ) : (
-    <button
-      onClick={joinMasterclass}
-      disabled={mcState === "busy"}
-      className="mt-7 inline-block rounded-full bg-gold px-8 py-4 text-sm font-semibold text-indigo-deep shadow-soft transition hover:bg-gold-soft disabled:opacity-60"
+  // Zoom's own registration page is the single front door for the
+  // MasterClass now — no more tagging Global Control directly from here
+  // and separately sending people to /masterclass, which let someone end
+  // up tagged without ever actually registering on Zoom. A cron job in
+  // lifecharter-architecture (/api/cron/masterclass-zoom-sync) syncs real
+  // Zoom registrants into Global Control's existing lccs-masterclass
+  // workflow instead.
+  const mcPrimary = (
+    <a
+      href={MASTERCLASS_ZOOM_REGISTER_URL}
+      className="mt-7 inline-block rounded-full bg-gold px-8 py-4 text-sm font-semibold text-indigo-deep shadow-soft transition hover:bg-gold-soft"
     >
-      {mcState === "busy" ? "Saving your seat…" : "Save my MasterClass seat →"}
-    </button>
+      Save my MasterClass seat →
+    </a>
   );
 
-  const mcLink = (label: string) =>
-    registeredInline ? (
-      <span className="font-semibold text-teal">✓ You&apos;re registered — check your email</span>
-    ) : (
-      <button
-        onClick={joinMasterclass}
-        disabled={mcState === "busy"}
-        className="font-semibold text-teal underline-offset-2 hover:text-plum hover:underline disabled:opacity-60"
-      >
-        {mcState === "busy" ? "Saving your seat…" : label}
-      </button>
-    );
+  const mcLink = (label: string) => (
+    <a
+      href={MASTERCLASS_ZOOM_REGISTER_URL}
+      className="font-semibold text-teal underline-offset-2 hover:text-plum hover:underline"
+    >
+      {label}
+    </a>
+  );
 
   return (
     <div className="animate-fadeUp">
