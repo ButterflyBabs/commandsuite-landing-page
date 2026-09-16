@@ -729,6 +729,11 @@ function Footer() {
         </div>
         <p>One ecosystem. Multiple doorways. A life, mission, and business built from Truth rather than fear.</p>
       </div>
+      <div className="mx-auto mt-6 flex max-w-6xl flex-wrap items-center justify-center gap-x-6 gap-y-2 px-6 text-xs text-ivory/45 sm:justify-start">
+        <a href="/legal/terms-of-sale" className="hover:text-ivory/70">Terms of Sale</a>
+        <a href="/legal/year-1-agreement" className="hover:text-ivory/70">Year-1 Agreement</a>
+        <a href="/legal/privacy-policy" className="hover:text-ivory/70">Privacy Policy</a>
+      </div>
     </footer>
   );
 }
