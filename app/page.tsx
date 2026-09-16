@@ -622,6 +622,11 @@ function Investment() {
           That&apos;s a conversation, not a checkout — come to our upcoming MasterClass and
           we&apos;ll show you exactly how it fits.
         </p>
+        <p className="mx-auto mt-4 max-w-xl leading-relaxed text-ivory/75">
+          Starter is built for one business running lean; Growth gives you room to grow — three
+          businesses, monthly 1:1 coaching, and more AI horsepower; VIP removes every limit and
+          puts a dedicated, white-glove team behind you.
+        </p>
         <div className="mt-10">
           <PrimaryCTA href="/masterclass">Join our upcoming MasterClass →</PrimaryCTA>
         </div>
