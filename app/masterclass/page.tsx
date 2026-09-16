@@ -60,7 +60,7 @@ export const viewport: Viewport = {
 };
 
 const CHALLENGE_URL = "https://command-shift-landing.vercel.app/";
-const CONSULT_URL = "https://app.globalcontrol.io/appointment-booking/executive-consultation-lccs";
+const CONSULT_URL = "https://lccommandsuite.com/schedule/masterclass"; // gated behind the 3-question MasterClass qualification form
 
 /* ================================================================== */
 /*  Brand marks                                                        */
