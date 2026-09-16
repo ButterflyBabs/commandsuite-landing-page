@@ -76,7 +76,9 @@ async function findContactIdByEmail(apiKey: string, email: string): Promise<stri
       if (Array.isArray(candidate)) rows = candidate as Record<string, unknown>[];
     }
     const match = rows.find((r) => String(r.email ?? "").toLowerCase() === email.toLowerCase()) ?? rows[0];
-    return match ? pickContactId(match) ?? String(match._id ?? match.id ?? "") || null : null;
+    if (!match) return null;
+    const id = pickContactId(match) || String(match._id ?? match.id ?? "");
+    return id || null;
   } catch {
     return null;
   }
