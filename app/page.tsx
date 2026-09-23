@@ -174,6 +174,14 @@ function Nav() {
           <a href="#tour" className="hover:text-indigo">The Command Suite</a>
           <a href="#start" className="hover:text-indigo">Ways to start</a>
           <a
+            href="https://coaching-certification-portal.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-indigo"
+          >
+            Coach Certification
+          </a>
+          <a
             href="https://lccommandsuite.com/schedule/website"
             className="rounded-full bg-gold px-5 py-2 font-semibold text-indigo-deep hover:bg-gold-soft"
           >
