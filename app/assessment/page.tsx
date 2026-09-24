@@ -282,8 +282,7 @@ export default function AssessmentPage() {
     <main className="min-h-screen bg-watercolor-soft">
       <header className="border-b border-indigo/10 bg-ivory/90 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center gap-2 px-6 py-4">
-          <Compass className="h-6 w-6 text-gold" />
-          <span className="font-serif text-lg font-semibold text-indigo">LifeCharter</span>
+          <img src="/brand/command-suite-logo.png" alt="LifeCharter Command Suite" width={1000} height={320} className="h-9 w-auto" />
           <span className="ml-auto text-xs font-semibold uppercase tracking-[0.2em] text-indigo/50">
             Executive Business Assessment
           </span>

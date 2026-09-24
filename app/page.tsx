@@ -166,8 +166,7 @@ function Nav() {
     <header className="sticky top-0 z-30 border-b border-indigo/10 bg-ivory/95 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="#top" className="flex items-center gap-2 text-indigo">
-          <Compass className="h-6 w-6 text-gold" />
-          <span className="font-serif text-lg font-semibold tracking-wide">LifeCharter</span>
+          <img src="/brand/command-suite-logo.png" alt="LifeCharter Command Suite" width={1000} height={320} className="h-10 w-auto" />
         </a>
         <div className="hidden items-center gap-8 text-sm font-medium text-indigo/80 md:flex">
           <a href="#what" className="hover:text-indigo">What it is</a>
@@ -737,8 +736,7 @@ function Footer() {
     <footer className="bg-indigo-deep border-t border-ivory/10 py-10 text-ivory/60">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm sm:flex-row">
         <div className="flex items-center gap-2">
-          <Compass className="h-5 w-5 text-gold" />
-          <span className="font-serif text-base text-ivory">LifeCharter</span>
+          <img src="/brand/command-suite-logo-light.png" alt="LifeCharter Command Suite" width={1000} height={320} className="h-9 w-auto" />
         </div>
         <p>One ecosystem. Multiple doorways. A life, mission, and business built from Truth rather than fear.</p>
       </div>
