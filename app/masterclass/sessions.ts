@@ -1,7 +1,10 @@
 /**
- * MasterClass schedule — next session Thursday 8 October 2026 at 5:00 PM Mountain
- * (set by AmiLynne 2026-09-25). After it, the page shows "next dates announced soon"
- * until the next date is added here.
+ * MasterClass schedule — every other Thursday at 5:00 PM Mountain, starting
+ * 8 October 2026 and continuing (set by AmiLynne 2026-09-25). LAST_SESSION is just
+ * a far-off stop so the list is finite; move it out when it gets close.
+ *
+ * The page only ever names the NEXT session, never the cadence, on purpose:
+ * AmiLynne wants urgency to register now, not people waiting for "the next one".
  *
  * The page always advertises the next session that hasn't finished. When one
  * ends, the countdown, the hero date card, the mid-page line and the structured
@@ -24,8 +27,8 @@
  */
 
 const FIRST_SESSION = { year: 2026, month: 9 /* 0-based: October */, day: 8 };
-const LAST_SESSION = { year: 2026, month: 9 /* 0-based: October */, day: 8 };
-const EVERY_N_DAYS = 7;
+const LAST_SESSION = { year: 2027, month: 11 /* 0-based: December */, day: 30 };
+const EVERY_N_DAYS = 14;
 
 /** Dates to skip, as YYYY-MM-DD in Mountain Time. */
 const SKIP: string[] = [];
