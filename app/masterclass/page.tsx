@@ -16,7 +16,7 @@ const SESSION = currentSession();
 // When the run has finished there is no date to show. The page still works —
 // it just stops naming a session, rather than advertising one that isn't real.
 const DATE_LINE = SESSION ? SESSION.dateLong : "Next dates announced soon";
-const TIME_LINE = SESSION ? `${SESSION.time} · Live, online` : "Thursdays · 5:00 PM Mountain · Live, online";
+const TIME_LINE = SESSION ? `${SESSION.time} · Live, online` : "5:00 PM Mountain · Live, online";
 const DURATION_LINE = SESSION ? SESSION.duration : "90 minutes";
 const SESSION_LINE = SESSION ? `${SESSION.dateLong} at ${SESSION.time}.` : "New dates announced soon.";
 const SESSION_LINE_OG = SESSION ? `${SESSION.dateLong} · ${SESSION.time}.` : "New dates announced soon.";

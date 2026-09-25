@@ -1,6 +1,7 @@
 /**
- * MasterClass schedule — weekly on Thursdays at 5:00 PM Mountain,
- * from 24 September 2026 through 17 December 2026.
+ * MasterClass schedule — next session Friday 9 October 2026 at 5:00 PM Mountain
+ * (set by AmiLynne 2026-09-25). After it, the page shows "next dates announced soon"
+ * until the next date is added here.
  *
  * The page always advertises the next session that hasn't finished. When one
  * ends, the countdown, the hero date card, the mid-page line and the structured
@@ -22,8 +23,8 @@
  * America/Denver each time, which stays correct across the change.
  */
 
-const FIRST_SESSION = { year: 2026, month: 8 /* 0-based: September */, day: 24 };
-const LAST_SESSION = { year: 2026, month: 11 /* 0-based: December */, day: 17 };
+const FIRST_SESSION = { year: 2026, month: 9 /* 0-based: October */, day: 9 };
+const LAST_SESSION = { year: 2026, month: 9 /* 0-based: October */, day: 9 };
 const EVERY_N_DAYS = 7;
 
 /** Dates to skip, as YYYY-MM-DD in Mountain Time. */
