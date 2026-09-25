@@ -606,6 +606,12 @@ function Footer() {
         </a>
         <p>One ecosystem. Multiple doorways. A life, mission, and business built from Truth rather than fear.</p>
       </div>
+      <div className="mx-auto mt-6 flex max-w-6xl justify-center px-6 text-xs text-ivory/45 sm:justify-start">
+        {/* Babs's personal hub; swap to https://amilynnecarroll.com once the domain moves off GoHighLevel. */}
+        <a href="https://amilynnecarroll-site.vercel.app/" className="hover:text-ivory/70">
+          AmiLynne “Babs” Carroll · amilynnecarroll.com
+        </a>
+      </div>
     </footer>
   );
 }

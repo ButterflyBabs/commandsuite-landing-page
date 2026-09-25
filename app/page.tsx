@@ -161,6 +161,9 @@ function ShowcaseImage({
 /*  Navigation                                                         */
 /* ------------------------------------------------------------------ */
 
+// Babs's personal hub. Points at the new site until amilynnecarroll.com moves off GoHighLevel; then swap to https://amilynnecarroll.com.
+const HUB_URL = "https://amilynnecarroll-site.vercel.app/";
+
 function Nav() {
   return (
     <header className="sticky top-0 z-30 border-b border-indigo/10 bg-ivory/95 backdrop-blur">
@@ -179,6 +182,9 @@ function Nav() {
             className="hover:text-indigo"
           >
             Coach Certification
+          </a>
+          <a href={HUB_URL} className="hover:text-indigo">
+            About Babs
           </a>
           <a
             href="https://lccommandsuite.com/schedule/website"
@@ -744,6 +750,7 @@ function Footer() {
         <a href="/legal/terms-of-sale" className="hover:text-ivory/70">Terms of Sale</a>
         <a href="/legal/year-1-agreement" className="hover:text-ivory/70">Year-1 Agreement</a>
         <a href="/legal/privacy-policy" className="hover:text-ivory/70">Privacy Policy</a>
+        <a href={HUB_URL} className="hover:text-ivory/70">AmiLynne “Babs” Carroll · amilynnecarroll.com</a>
       </div>
     </footer>
   );
