@@ -462,7 +462,11 @@ function Architect() {
               Truth, and building a life and business that move <em>on purpose</em>.
             </p>
           </div>
-          <p className="mt-7 font-serif text-xl text-plum">Head Up — Wings Out. 🦋</p>
+          <p className="mt-7 font-serif text-xl text-plum">
+            Head up - Wings out
+            <br />
+            Babs 🦋
+          </p>
         </div>
 
         {/* Photo — right */}
@@ -576,14 +580,18 @@ function Close() {
   return (
     <section className="bg-indigo-deep py-20 text-center text-ivory">
       <div className="mx-auto max-w-2xl px-6">
-        <Compass className="mx-auto h-10 w-10 text-gold" />
+        <img src="/brand/command-suite-emblem.png" alt="" width={256} height={256} className="mx-auto h-20 w-auto" />
         <p className="mt-6 font-serif text-2xl font-semibold text-balance md:text-3xl">
           Command is not a moment. It&apos;s a habit.
         </p>
         <div className="mt-8">
           <PrimaryCTA href="#register">Save my seat →</PrimaryCTA>
         </div>
-        <p className="mt-8 font-serif text-lg text-gold-soft">Head Up — Wings Out. 🦋</p>
+        <p className="mt-8 font-serif text-lg text-gold-soft">
+          Head up - Wings out
+          <br />
+          Babs 🦋
+        </p>
       </div>
     </section>
   );
@@ -594,7 +602,7 @@ function Footer() {
     <footer className="bg-indigo-deep border-t border-ivory/10 py-10 text-ivory/60">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm sm:flex-row">
         <a href="/" className="flex items-center gap-2">
-          <img src="/brand/command-suite-logo-light.png" alt="LifeCharter Command Suite" width={1000} height={320} className="h-9 w-auto" />
+          <img src="/brand/command-suite-logo-light.png" alt="LifeCharter Command Suite" width={1000} height={320} className="h-16 w-auto sm:h-20" />
         </a>
         <p>One ecosystem. Multiple doorways. A life, mission, and business built from Truth rather than fear.</p>
       </div>

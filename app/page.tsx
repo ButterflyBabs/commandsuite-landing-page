@@ -736,7 +736,7 @@ function Footer() {
     <footer className="bg-indigo-deep border-t border-ivory/10 py-10 text-ivory/60">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm sm:flex-row">
         <div className="flex items-center gap-2">
-          <img src="/brand/command-suite-logo-light.png" alt="LifeCharter Command Suite" width={1000} height={320} className="h-9 w-auto" />
+          <img src="/brand/command-suite-logo-light.png" alt="LifeCharter Command Suite" width={1000} height={320} className="h-16 w-auto sm:h-20" />
         </div>
         <p>One ecosystem. Multiple doorways. A life, mission, and business built from Truth rather than fear.</p>
       </div>
