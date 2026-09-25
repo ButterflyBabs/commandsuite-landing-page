@@ -171,10 +171,10 @@ function Nav() {
         <a href="#top" className="flex items-center gap-2 text-indigo">
           <img src="/brand/command-suite-logo.png" alt="LifeCharter Command Suite" width={1000} height={320} className="h-10 w-auto" />
         </a>
-        <div className="hidden items-center gap-8 text-sm font-medium text-indigo/80 md:flex">
-          <a href="#what" className="hover:text-indigo">What it is</a>
+        <div className="hidden items-center gap-5 whitespace-nowrap text-sm font-medium text-indigo/80 md:flex lg:gap-8">
+          <a href="#what" className="hidden hover:text-indigo lg:inline">What it is</a>
           <a href="#tour" className="hover:text-indigo">The Command Suite</a>
-          <a href="#start" className="hover:text-indigo">Ways to start</a>
+          <a href="#start" className="hidden hover:text-indigo lg:inline">Ways to start</a>
           <a
             href="https://coaching-certification-portal.vercel.app/"
             target="_blank"
