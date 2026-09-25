@@ -179,7 +179,7 @@ function Nav() {
             href="https://coaching-certification-portal.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-indigo"
+            className="hidden hover:text-indigo lg:inline"
           >
             Coach Certification
           </a>
