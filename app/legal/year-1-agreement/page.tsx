@@ -75,7 +75,7 @@ export default function Year1AgreementPage() {
         </div>
 
         <p className="mt-10 text-sm text-indigo/50">
-          Questions? Reach us at amilynne@amilynnecarroll.com.
+          Questions? Reach us at support@amilynnecarroll.com.
         </p>
       </div>
     </main>
