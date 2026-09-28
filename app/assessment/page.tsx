@@ -264,6 +264,8 @@ export default function AssessmentPage() {
           readinessAnswers,
           overall: computed.overall,
           topGaps: computed.topGaps.map((d) => d.label),
+          gapDetails: computed.topGaps.map((d) => ({ label: d.label, score: dimAnswers[d.key] ?? 3, reason: d.reason })),
+          scores: DIMENSIONS.map((d) => ({ label: d.label, score: dimAnswers[d.key] ?? 3 })),
           recommendation: computed.recommendation,
         }),
       });
