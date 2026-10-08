@@ -17,7 +17,7 @@ import { trackEvent } from "../lib/pixel";
 // skip registration entirely). A cron job in lifecharter-architecture polls
 // Zoom's registrant list and syncs it into Global Control's existing
 // lccs-masterclass workflow — see /api/cron/masterclass-zoom-sync there.
-const ZOOM_REGISTER_URL = "https://us02web.zoom.us/meeting/register/qHumbeSKSP-U3gsNsBHYQw";
+const ZOOM_REGISTER_URL = "https://lccommandsuite.com/masterclass-signup";
 
 function parts(ms: number) {
   const total = Math.max(0, Math.floor(ms / 1000));
@@ -135,7 +135,7 @@ export function RegisterForm() {
         onClick={() => trackEvent("Lead", { content_name: "masterclass_registration" })}
         className="inline-flex w-full items-center justify-center rounded-full bg-gold px-8 py-4 text-sm font-semibold tracking-wide text-indigo-deep shadow-soft transition hover:bg-gold-soft"
       >
-        Save my seat on Zoom →
+        Save my seat →
       </a>
       <p className="mt-4 text-center text-xs text-indigo/50">
         Free to attend. Zoom sends your personal join link and reminders — unsubscribe anytime.

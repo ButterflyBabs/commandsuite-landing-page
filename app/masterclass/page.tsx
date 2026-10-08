@@ -291,48 +291,31 @@ function Reframe() {
 /* ================================================================== */
 
 function Method() {
-  const phases = [
-    {
-      n: "Phase 1",
-      title: "Truth & Clarity",
-      tag: "See it honestly",
-      body: "Get radically honest about where the business stands and why it exists.",
-    },
-    {
-      n: "Phase 2",
-      title: "Build the Engine",
-      tag: "Turn clarity into structure",
-      body: "Encode that Truth into offer, revenue, systems, voice, position, and a daily rhythm.",
-    },
-    {
-      n: "Phase 3",
-      title: "Live in Command",
-      tag: "Consolidate, lead, make it permanent",
-      body: "Bring it into one command center and one leader — built to last.",
-    },
+  const moves = [
+    { t: "Being busy is not being in command.", b: "See which side of the line your week lived on." },
+    { t: "Your BURIED pattern.", b: "Find the two places your business leans on you most. They are architecture clues, not personality problems." },
+    { t: "A five-minute bottleneck scan", b: "on one real issue, so you can see exactly where it gets stuck." },
+    { t: "Five principles, each one a thing you do:", b: "architecture before effort, visibility before velocity, True North before tactics, decision ownership before delegation, rhythm before reminders." },
+    { t: "A twelve-dimension score", b: "of your business." },
+    { t: "Your seven-day command plan.", b: "Start it before your next week begins." },
   ];
   return (
     <section id="method" className="bg-watercolor-soft py-24">
       <div className="mx-auto max-w-3xl px-6 text-center">
         <Eyebrow>What we&apos;ll cover</Eyebrow>
         <h2 className="font-serif text-3xl font-semibold leading-tight text-balance md:text-4xl">
-          The whole method, in one sitting.
+          Ninety minutes. One real issue from your business. A plan you can start before your next week begins.
         </h2>
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-indigo/80">
-          You&apos;ll get a fly-over of all 21 aligned moves that make the shift — organized into three phases — and
-          then we&apos;ll go deep on the ones that change everything, and actually <em>do</em> them together.
-        </p>
       </div>
       <div className="mx-auto mt-12 grid max-w-5xl gap-6 px-6 md:grid-cols-3">
-        {phases.map((p) => (
-          <div key={p.n} className="card-hover flex flex-col rounded-3xl bg-white/70 p-8 shadow-card">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">{p.n}</p>
-            <h3 className="mt-3 font-serif text-2xl font-semibold text-indigo">{p.title}</h3>
-            <p className="mt-1 text-sm font-medium italic text-plum">{p.tag}</p>
-            <p className="mt-4 leading-relaxed text-indigo/75">{p.body}</p>
+        {moves.map((m) => (
+          <div key={m.t} className="card-hover flex flex-col rounded-3xl bg-white/70 p-8 shadow-card">
+            <h3 className="font-serif text-xl font-semibold text-indigo">{m.t}</h3>
+            <p className="mt-3 leading-relaxed text-indigo/75">{m.b}</p>
           </div>
         ))}
       </div>
+      <p className="mx-auto mt-8 max-w-2xl px-6 text-center text-lg text-indigo/80">Live Q&amp;A at the end.</p>
       <p className="mx-auto mt-10 max-w-2xl px-6 text-center font-serif text-xl text-plum text-balance">
         Insight that isn&apos;t consolidated decays. You&apos;ll leave with an operating system — and a leader who runs
         the business on purpose.
@@ -349,21 +332,21 @@ function BuildLive() {
   const builds = [
     {
       k: "01",
-      title: "The Command Audit",
-      teaching: "You can't command what you refuse to look at.",
-      body: "Rate every area of your business 1–5 and instantly see the map. Your two lowest areas become your personal starting point — clear, honest, right there on the screen.",
+      title: "Your BURIED pattern and bottleneck map",
+      teaching: "Those two letters are not personality problems. They are architecture clues.",
+      body: "Name the pattern, then trace one real bottleneck to where it gets stuck.",
     },
     {
       k: "02",
-      title: "Your True North",
-      teaching: "Clarity isn't knowing everything — it's knowing what matters most.",
-      body: "Name a single heading for this season in one sentence. The audit reveals the gaps; True North makes every decision after it simpler.",
+      title: "Your twelve-dimension score",
+      teaching: "You can't command what you refuse to look at.",
+      body: "Rate every dimension of your business, on instinct, and see where it is strong and where it needs structure.",
     },
     {
       k: "03",
-      title: "The Command Center",
-      teaching: "You can't lead what you can't see in one place.",
-      body: "Consolidate mission, True North, priorities, and numbers into one view — the culminating artifact, and exactly what running your business daily inside the Command Suite looks like.",
+      title: "Your seven-day command plan",
+      teaching: "Clarity isn't knowing everything. It's knowing what matters most.",
+      body: "A True North sentence, a decision threshold and a weekly rhythm, ready to start before your next calendar week.",
     },
   ];
   return (
@@ -371,7 +354,7 @@ function BuildLive() {
       <div className="mx-auto max-w-3xl px-6 text-center">
         <Eyebrow light>You&apos;ll build, not just watch</Eyebrow>
         <h2 className="font-serif text-3xl font-semibold leading-tight text-balance md:text-4xl">
-          Three things you&apos;ll walk out having actually made.
+          What you&apos;ll walk out having made.
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ivory/80">
           This is a MasterClass, not a lecture. For each deep-dive we follow the same rhythm you&apos;d meet inside the
@@ -398,11 +381,12 @@ function BuildLive() {
 
 function WhoFor() {
   const takeaways = [
-    "A completed Command Audit — your real map",
-    "A named True North for this season",
-    "The shape of your one command center",
-    "The full 21-move method, start to finish",
-    "The same language and tools as the challenge",
+    "Your BURIED pattern, named",
+    "A bottleneck map for one real issue",
+    "A twelve-dimension score of your business",
+    "A True North sentence for this season",
+    "One decision threshold and one weekly rhythm",
+    "A seven-day plan to start this week",
     "A next step that finally feels on purpose",
   ];
   return (
@@ -544,7 +528,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What will I actually leave with?",
-    a: "Real artifacts — a completed Command Audit, a named True North, and the shape of your one command center — plus the full method and a clear next step.",
+    a: "Your BURIED pattern named, a bottleneck map for one real issue, a twelve-dimension score of your business, a True North sentence, a decision threshold and weekly rhythm, and a seven-day plan to start this week.",
   },
 ];
 
