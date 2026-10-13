@@ -25,7 +25,7 @@ const SESSION_LINE_OG = SESSION ? `${SESSION.dateLong} · ${SESSION.time}.` : "N
 /*  SEO                                                                */
 /* ================================================================== */
 
-const SITE = "https://commandsuite-landing-page.vercel.app";
+const SITE = "https://landingpage.lccommandsuite.com";
 
 export const metadata: Metadata = {
   title: "From Hustle to Command — Free Live MasterClass | LifeCharter",
