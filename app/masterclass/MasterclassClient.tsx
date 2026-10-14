@@ -132,7 +132,17 @@ export function RegisterForm() {
     <div className="rounded-3xl border border-indigo/10 bg-white/85 p-6 text-center shadow-soft sm:p-8">
       <a
         href={ZOOM_REGISTER_URL}
-        onClick={() => trackEvent("Lead", { content_name: "masterclass_registration" })}
+        onClick={(e) => {
+          // Carry the campaign tags (utm_*), the Facebook click id and any affiliate or card code to the sign-up page,
+          // so each registration can be tied to the ad or link that brought it.
+          try {
+            const qs = window.location.search;
+            if (qs) e.currentTarget.href = ZOOM_REGISTER_URL + qs;
+          } catch {
+            /* the plain link still works */
+          }
+          trackEvent("Lead", { content_name: "masterclass_registration" });
+        }}
         className="inline-flex w-full items-center justify-center rounded-full bg-gold px-8 py-4 text-sm font-semibold tracking-wide text-indigo-deep shadow-soft transition hover:bg-gold-soft"
       >
         Save my seat →
