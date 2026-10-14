@@ -28,7 +28,7 @@ const SESSION_LINE_OG = SESSION ? `${SESSION.dateLong} · ${SESSION.time}.` : "N
 const SITE = "https://landingpage.lccommandsuite.com";
 
 export const metadata: Metadata = {
-  title: "From Hustle to Command — Free Live MasterClass | LifeCharter",
+  title: "The Command Shift MasterClass: From Hustle to Command (Free, Live) | LifeCharter",
   description:
     `A free 90-minute live training with the Alignment Architect. You don't have a hustle problem — you have an alignment problem. See the whole method that takes you from a scattered hustle to hard-won harmony, and build your first command move live. ${SESSION_LINE}`,
   keywords: [
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: `${SITE}/masterclass` },
   openGraph: {
-    title: "From Hustle to Command — Free Live MasterClass",
+    title: "The Command Shift MasterClass: From Hustle to Command (Free, Live)",
     description:
       `90 minutes, live. See the full method — from a scattered hustle to hard-won harmony — and build your first command move in the room. ${SESSION_LINE_OG}`,
     type: "website",
@@ -608,7 +608,7 @@ function StructuredData() {
   const eventLd = {
     "@context": "https://schema.org",
     "@type": "Event",
-    name: "From Hustle to Command — Free MasterClass",
+    name: "The Command Shift MasterClass: From Hustle to Command (Free)",
     description:
       "A free 90-minute live training: see the whole method that takes you from a scattered hustle to hard-won harmony, and build your first command move live.",
     startDate: SESSION?.isoStart,
