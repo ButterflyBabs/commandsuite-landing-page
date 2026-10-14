@@ -17,7 +17,7 @@ const nextConfig = {
       // added later without fighting cached permanent redirects.
       {
         source: "/challenge",
-        destination: "https://command-shift-landing.vercel.app/",
+        destination: "https://shift.lccommandsuite.com/",
         permanent: false,
       },
     ];
