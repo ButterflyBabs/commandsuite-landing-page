@@ -59,7 +59,7 @@ export const viewport: Viewport = {
   themeColor: "#1F315B",
 };
 
-const CHALLENGE_URL = "https://command-shift-landing.vercel.app/";
+const CHALLENGE_URL = "https://shift.lccommandsuite.com/";
 const CONSULT_URL = "https://lccommandsuite.com/schedule/masterclass"; // gated behind the 3-question MasterClass qualification form
 
 /* ================================================================== */
