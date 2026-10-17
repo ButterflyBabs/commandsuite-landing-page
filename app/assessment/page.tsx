@@ -154,7 +154,7 @@ const SCALE = [
 /* ------------------------------------------------------------------ */
 
 const LINKS = {
-  challenge: "https://command-shift-landing.vercel.app/", // 21-Day Executive Challenge signup
+  challenge: "https://shift.lccommandsuite.com/", // The Command Shift 21-Day Challenge signup
   consultation: "https://lccommandsuite.com/schedule/website", // Executive Consultation booking — gated behind the qualification questionnaire
 };
 
