@@ -1,7 +1,6 @@
 /**
- * MasterClass schedule: every Wednesday at 12:00 PM (noon) Mountain, 60 minutes. The public run starts
- * Wednesday 4 November 2026 (set by AmiLynne 2026-10-23). A soft open on Wednesday 28 October is by
- * invitation only and is deliberately not advertised on this page.
+ * MasterClass schedule: every Wednesday at 12:00 PM (noon) Mountain, 60 minutes. The first session
+ * is Wednesday 28 October 2026 (set by AmiLynne 2026-10-23: the page and sign-up advertise the 28th).
  *
  * The page only ever names the NEXT session, never the cadence, on purpose:
  * AmiLynne wants urgency to register now, not people waiting for "the next one".
@@ -19,14 +18,14 @@
  * TO SKIP A WEEK: add its date to SKIP (Mountain Time, YYYY-MM-DD).
  *
  * Why this isn't just "add 7 days of milliseconds": Mountain Time is UTC-6 in
- * daylight saving and UTC-7 outside it, and DST ends 1 November 2026, just before
- * the first public session. Adding fixed milliseconds would hold the UTC instant
+ * daylight saving and UTC-7 outside it, and DST ends 1 November 2026, just after
+ * the first session. Adding fixed milliseconds would hold the UTC instant
  * steady and let the local time drift. Instead we step forward seven calendar days
  * and re-resolve 12:00 PM in America/Denver each time, which stays correct across
  * the change.
  */
 
-const FIRST_SESSION = { year: 2026, month: 10 /* 0-based: November */, day: 4 };
+const FIRST_SESSION = { year: 2026, month: 9 /* 0-based: October */, day: 28 };
 const LAST_SESSION = { year: 2027, month: 11 /* 0-based: December */, day: 29 };
 const EVERY_N_DAYS = 7;
 
