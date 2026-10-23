@@ -1,7 +1,7 @@
 /**
- * MasterClass schedule — every other Thursday at 5:00 PM Mountain, starting
- * 8 October 2026 and continuing (set by AmiLynne 2026-09-25). LAST_SESSION is just
- * a far-off stop so the list is finite; move it out when it gets close.
+ * MasterClass schedule: every Wednesday at 12:00 PM (noon) Mountain, 60 minutes. The public run starts
+ * Wednesday 4 November 2026 (set by AmiLynne 2026-10-23). A soft open on Wednesday 28 October is by
+ * invitation only and is deliberately not advertised on this page.
  *
  * The page only ever names the NEXT session, never the cadence, on purpose:
  * AmiLynne wants urgency to register now, not people waiting for "the next one".
@@ -10,34 +10,34 @@
  * ends, the countdown, the hero date card, the mid-page line and the structured
  * data all roll forward on their own.
  *
- * Unlike the earlier open-ended version, this series ENDS. After the final
- * session, currentSession() returns null and the page falls back to a
- * "next dates announced soon" state that still collects registrations —
- * so the page never advertises a date that isn't happening.
+ * The series ENDS at LAST_SESSION. After the final session, currentSession()
+ * returns null and the page falls back to a "next dates announced soon" state
+ * that still collects registrations, so the page never advertises a date that
+ * isn't happening.
  *
  * TO EXTEND THE SERIES: move LAST_SESSION.
- * TO SKIP A WEEK: add its date to SKIP, e.g. "2026-11-26" for Thanksgiving.
+ * TO SKIP A WEEK: add its date to SKIP (Mountain Time, YYYY-MM-DD).
  *
  * Why this isn't just "add 7 days of milliseconds": Mountain Time is UTC-6 in
- * daylight saving and UTC-7 outside it, and DST ends 1 November 2026 — inside
- * this run. Adding fixed milliseconds would hold the UTC instant steady and let
- * the local time drift, so every session from 5 November would quietly start at
- * 4:00 PM. Instead we step forward seven calendar days and re-resolve 5:00 PM in
- * America/Denver each time, which stays correct across the change.
+ * daylight saving and UTC-7 outside it, and DST ends 1 November 2026, just before
+ * the first public session. Adding fixed milliseconds would hold the UTC instant
+ * steady and let the local time drift. Instead we step forward seven calendar days
+ * and re-resolve 12:00 PM in America/Denver each time, which stays correct across
+ * the change.
  */
 
-const FIRST_SESSION = { year: 2026, month: 9 /* 0-based: October */, day: 8 };
-const LAST_SESSION = { year: 2027, month: 11 /* 0-based: December */, day: 30 };
-const EVERY_N_DAYS = 14;
+const FIRST_SESSION = { year: 2026, month: 10 /* 0-based: November */, day: 4 };
+const LAST_SESSION = { year: 2027, month: 11 /* 0-based: December */, day: 29 };
+const EVERY_N_DAYS = 7;
 
 /** Dates to skip, as YYYY-MM-DD in Mountain Time. */
-const SKIP: string[] = [];
+const SKIP: string[] = ["2026-11-25", "2026-12-23", "2026-12-30"]; // Thanksgiving week and the two holiday weeks
 
-const HOUR = 17; // 5:00 PM
+const HOUR = 12; // 12:00 PM (noon)
 const MINUTE = 0;
 const ZONE = "America/Denver";
 
-export const DURATION_MINUTES = 90;
+export const DURATION_MINUTES = 60;
 
 export type SessionInfo = {
   /** Start, as a UTC instant — correct for a viewer in any timezone. */
@@ -45,9 +45,9 @@ export type SessionInfo = {
   endMs: number;
   /** e.g. "Thursday, September 24, 2026" */
   dateLong: string;
-  /** e.g. "5:00 PM Mountain Time" */
+  /** e.g. "12:00 PM Mountain Time" */
   time: string;
-  /** e.g. "90 minutes" */
+  /** e.g. "60 minutes" */
   duration: string;
   isoStart: string;
   isoEnd: string;
@@ -78,7 +78,7 @@ function zoneOffsetMs(utcMs: number): number {
   return asIfUtc - utcMs;
 }
 
-/** Resolve 5:00 PM Denver on a given calendar date to the UTC instant it means. */
+/** Resolve 12:00 PM Denver on a given calendar date to the UTC instant it means. */
 function denverToUtcMs(year: number, month: number, day: number): number {
   const naive = Date.UTC(year, month, day, HOUR, MINUTE);
   // Two passes: the first offset is looked up at the wrong instant near a DST

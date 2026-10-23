@@ -16,8 +16,8 @@ const SESSION = currentSession();
 // When the run has finished there is no date to show. The page still works —
 // it just stops naming a session, rather than advertising one that isn't real.
 const DATE_LINE = SESSION ? SESSION.dateLong : "Next dates announced soon";
-const TIME_LINE = SESSION ? `${SESSION.time} · Live, online` : "5:00 PM Mountain · Live, online";
-const DURATION_LINE = SESSION ? SESSION.duration : "90 minutes";
+const TIME_LINE = SESSION ? `${SESSION.time} · Live, online` : "12:00 PM Mountain · Live, online";
+const DURATION_LINE = SESSION ? SESSION.duration : "60 minutes";
 const SESSION_LINE = SESSION ? `${SESSION.dateLong} at ${SESSION.time}.` : "New dates announced soon.";
 const SESSION_LINE_OG = SESSION ? `${SESSION.dateLong} · ${SESSION.time}.` : "New dates announced soon.";
 
@@ -30,7 +30,7 @@ const SITE = "https://landingpage.lccommandsuite.com";
 export const metadata: Metadata = {
   title: "The Command Shift MasterClass: From Hustle to Command (Free, Live) | LifeCharter",
   description:
-    `A free 90-minute live training with the Alignment Architect. You don't have a hustle problem — you have an alignment problem. See the whole method that takes you from a scattered hustle to hard-won harmony, and build your first command move live. ${SESSION_LINE}`,
+    `A free 60-minute live training with the Alignment Architect. You don't have a hustle problem — you have an alignment problem. See the whole method that takes you from a scattered hustle to hard-won harmony, and build your first command move live. ${SESSION_LINE}`,
   keywords: [
     "From Hustle to Command",
     "MasterClass",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Command Shift MasterClass: From Hustle to Command (Free, Live)",
     description:
-      `90 minutes, live. See the full method — from a scattered hustle to hard-won harmony — and build your first command move in the room. ${SESSION_LINE_OG}`,
+      `60 minutes, live. See the full method — from a scattered hustle to hard-won harmony — and build your first command move in the room. ${SESSION_LINE_OG}`,
     type: "website",
     url: `${SITE}/masterclass`,
   },
@@ -180,7 +180,7 @@ function Hero() {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/masterclass-hero.jpg"
-        alt="The Command Shift MasterClass — From Hustle to Command. A 90-minute training for founders, coaches, and leaders ready to move from a scattered hustle to hard-won harmony. See the whole method. Build your command center. Lead on purpose."
+        alt="The Command Shift MasterClass — From Hustle to Command. A 60-minute training for founders, coaches, and leaders ready to move from a scattered hustle to hard-won harmony. See the whole method. Build your command center. Lead on purpose."
         className="mx-auto block w-full max-w-[1600px]"
       />
     </section>
@@ -304,7 +304,7 @@ function Method() {
       <div className="mx-auto max-w-3xl px-6 text-center">
         <Eyebrow>What we&apos;ll cover</Eyebrow>
         <h2 className="font-serif text-3xl font-semibold leading-tight text-balance md:text-4xl">
-          Ninety minutes. One real issue from your business. A plan you can start before your next week begins.
+          Sixty minutes. One real issue from your business. A plan you can start before your next week begins.
         </h2>
       </div>
       <div className="mx-auto mt-12 grid max-w-5xl gap-6 px-6 md:grid-cols-3">
@@ -483,7 +483,7 @@ function Register() {
           Come see the whole shift — and start building it live.
         </h2>
         <p className="mx-auto mt-5 max-w-lg text-lg leading-relaxed text-ivory/80">
-          {DATE_LINE} · {SESSION ? SESSION.time : "5:00 PM Mountain"} · Live &amp; online. Free to attend, with a replay for everyone who
+          {DATE_LINE} · {SESSION ? SESSION.time : "12:00 PM Mountain"} · Live &amp; online. Free to attend, with a replay for everyone who
           registers.
         </p>
         <div className="mx-auto mt-10 max-w-lg text-left">
@@ -512,7 +512,7 @@ function Register() {
 const FAQS: { q: string; a: string }[] = [
   {
     q: "How long is the MasterClass?",
-    a: "About 90 minutes, taught live. We move through the full method, then go deep and build together — with time to actually do the work in the room.",
+    a: "About 60 minutes, taught live. We move through the full method, then go deep and build together — with time to actually do the work in the room.",
   },
   {
     q: "Is it really free?",
@@ -610,7 +610,7 @@ function StructuredData() {
     "@type": "Event",
     name: "The Command Shift MasterClass: From Hustle to Command (Free)",
     description:
-      "A free 90-minute live training: see the whole method that takes you from a scattered hustle to hard-won harmony, and build your first command move live.",
+      "A free 60-minute live training: see the whole method that takes you from a scattered hustle to hard-won harmony, and build your first command move live.",
     startDate: SESSION?.isoStart,
     endDate: SESSION?.isoEnd,
     eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
