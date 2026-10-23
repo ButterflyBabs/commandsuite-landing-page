@@ -197,6 +197,9 @@ function SessionBar() {
           <p className="font-serif text-2xl font-semibold text-indigo">{DATE_LINE}</p>
           <p className="text-indigo/70">{TIME_LINE}</p>
         </div>
+        <p className="mx-auto mt-5 max-w-md rounded-full bg-gold/25 px-5 py-2 text-sm font-semibold text-indigo">
+          Join live and get a free 2027 digital planner for founders.
+        </p>
 
         <div className="mt-8">
           <Countdown light />
