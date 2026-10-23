@@ -209,7 +209,7 @@ function SessionBar() {
         <p className="mt-5 text-sm leading-relaxed text-indigo/55">
           Taught live by AmiLynne &lsquo;Babs&nbsp;🦋&rsquo; Carroll, Alignment Architect
           <br />
-          Free to attend — a replay goes to everyone who registers
+          Free to attend — live on Zoom every Wednesday at noon MT
         </p>
       </div>
     </section>
@@ -483,8 +483,7 @@ function Register() {
           Come see the whole shift — and start building it live.
         </h2>
         <p className="mx-auto mt-5 max-w-lg text-lg leading-relaxed text-ivory/80">
-          {DATE_LINE} · {SESSION ? SESSION.time : "12:00 PM Mountain"} · Live &amp; online. Free to attend, with a replay for everyone who
-          registers.
+          {DATE_LINE} · {SESSION ? SESSION.time : "12:00 PM Mountain"} · Live &amp; online. Free to attend.
         </p>
         <div className="mx-auto mt-10 max-w-lg text-left">
           <RegisterForm />
@@ -520,7 +519,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What if I can't make it live?",
-    a: "Register anyway. Everyone who signs up gets the replay, so you can watch when it works for you — though the live room is where you build alongside everyone else.",
+    a: "Register anyway. The MasterClass runs live every Wednesday at noon Mountain, so if this week doesn't work, you can join any upcoming session. The live room is where you build alongside everyone else.",
   },
   {
     q: "Do I need to have done the 21-Day Challenge first?",
