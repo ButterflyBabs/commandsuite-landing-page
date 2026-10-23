@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { Countdown, RegisterForm } from "./MasterclassClient";
-import { currentSession } from "./sessions";
+import { currentSession, whenPhrase } from "./sessions";
 
 /* ================================================================== */
 /*  Session details                                                    */
@@ -209,7 +209,7 @@ function SessionBar() {
         <p className="mt-5 text-sm leading-relaxed text-indigo/55">
           Taught live by AmiLynne &lsquo;Babs&nbsp;🦋&rsquo; Carroll, Alignment Architect
           <br />
-          Free to attend — live on Zoom every Wednesday at noon MT
+          Free to attend — live on Zoom {whenPhrase()} at noon MT
         </p>
       </div>
     </section>
@@ -519,7 +519,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What if I can't make it live?",
-    a: "Register anyway. The MasterClass runs live every Wednesday at noon Mountain, so if this week doesn't work, you can join any upcoming session. The live room is where you build alongside everyone else.",
+    a: "Register anyway, so your seat is saved and your link and reminders reach you. The live room is where you build alongside everyone else, and if something comes up, just reply to your confirmation email and we'll help.",
   },
   {
     q: "Do I need to have done the 21-Day Challenge first?",

@@ -148,3 +148,17 @@ export function currentSession(now: number = Date.now()): SessionInfo | null {
 export function sessionsRemaining(now: number = Date.now()): number {
   return allSessions().filter((s) => now < s.endMs).length;
 }
+
+/**
+ * How the page names the next session in a sentence: "this Wednesday" when it is within the coming
+ * week, otherwise the date ("Wednesday, December 2"). Never the cadence, so people register for the
+ * next one instead of waiting for "the next one".
+ */
+export function whenPhrase(now: number = Date.now()): string {
+  const s = currentSession(now);
+  if (!s) return "soon";
+  const day = (ms: number) => new Intl.DateTimeFormat("en-CA", { timeZone: ZONE }).format(new Date(ms));
+  const days = Math.round((Date.parse(day(s.startMs)) - Date.parse(day(now))) / 86_400_000);
+  if (days <= 6) return days <= 0 ? "today" : "this Wednesday";
+  return new Intl.DateTimeFormat("en-US", { weekday: "long", month: "long", day: "numeric", timeZone: ZONE }).format(new Date(s.startMs));
+}
