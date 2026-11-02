@@ -30,7 +30,7 @@ const LAST_SESSION = { year: 2027, month: 11 /* 0-based: December */, day: 29 };
 const EVERY_N_DAYS = 7;
 
 /** Dates to skip, as YYYY-MM-DD in Mountain Time. */
-const SKIP: string[] = ["2026-11-25", "2026-12-23", "2026-12-30"]; // Thanksgiving week and the two holiday weeks
+const SKIP: string[] = ["2026-11-18", "2026-11-25", "2026-12-23", "2026-12-30"]; // Take the Command Seat week, Thanksgiving week and the two holiday weeks
 
 const HOUR = 12; // 12:00 PM (noon)
 const MINUTE = 0;
