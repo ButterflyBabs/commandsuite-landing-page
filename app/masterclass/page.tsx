@@ -448,6 +448,18 @@ function Architect() {
               alignment. For Babs, command isn&apos;t about control. It&apos;s about seeing clearly, choosing from
               Truth, and building a life and business that move <em>on purpose</em>.
             </p>
+            <p>
+              In 2026, Best of Best Review named her{" "}
+              <a
+                href="https://bestofbestreview.com/lifecharter-command-suite-best-business-coach-for-founders-in-the-united-states-of-2026"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-indigo underline decoration-gold underline-offset-4 hover:text-plum"
+              >
+                Best Business Coach for Founders in the United States
+              </a>
+              .
+            </p>
           </div>
           <p className="mt-7 font-serif text-xl text-plum">
             Head up - Wings out

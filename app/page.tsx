@@ -216,6 +216,41 @@ function Hero() {
   );
 }
 
+// Best of Best Review award (Nov 2026) — link + badge reused in the strip and the Architect bio.
+const AWARD_URL =
+  "https://bestofbestreview.com/lifecharter-command-suite-best-business-coach-for-founders-in-the-united-states-of-2026";
+
+function AwardStrip() {
+  return (
+    <section aria-label="Award recognition" className="border-y border-gold/30 bg-ivory py-8">
+      <a
+        href={AWARD_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group mx-auto flex max-w-4xl flex-col items-center gap-5 px-6 text-center sm:flex-row sm:text-left"
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/awards/best-of-best-2026-badge.png"
+          alt="Best of Best Review Winner 2026 award badge"
+          width={282}
+          height={362}
+          className="h-24 w-auto shrink-0"
+        />
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gold">Award-winning · 2026</p>
+          <p className="mt-2 font-serif text-xl font-semibold leading-snug text-indigo md:text-2xl">
+            Best Business Coach for Founders in the United States of 2026
+          </p>
+          <p className="mt-1 text-sm text-indigo/60 group-hover:text-indigo">
+            Recognized by Best of Best Review — read the announcement →
+          </p>
+        </div>
+      </a>
+    </section>
+  );
+}
+
 function TransformationStatement() {
   return (
     <section className="bg-watercolor-deep relative overflow-hidden py-24 text-ivory">
@@ -704,6 +739,13 @@ function Architect() {
           alignment. For Babs, command isn&apos;t about control. It&apos;s about seeing clearly, choosing from
           Truth, and building a life and business that move on purpose.
         </p>
+        <p className="mt-5 text-lg leading-relaxed text-indigo/70">
+          In 2026, Best of Best Review named her{" "}
+          <a href={AWARD_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-indigo underline decoration-gold underline-offset-4 hover:text-plum">
+            Best Business Coach for Founders in the United States
+          </a>
+          .
+        </p>
       </div>
     </section>
   );
@@ -764,6 +806,7 @@ export default function Page() {
   return (
     <main>
       <Hero />
+      <AwardStrip />
       <TransformationStatement />
       <Tension />
       <Divider />
