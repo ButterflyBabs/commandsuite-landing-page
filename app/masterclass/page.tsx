@@ -145,11 +145,12 @@ function Divider() {
 function Nav() {
   return (
     <header className="sticky top-0 z-30 border-b border-indigo/10 bg-ivory/95 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-8 px-6 py-4">
         <a href="/" className="flex items-center gap-2 text-indigo">
           <img src="/brand/command-suite-logo.png" alt="LifeCharter Command Suite" width={1000} height={320} className="h-10 w-auto" />
         </a>
         <div className="hidden items-center gap-8 text-sm font-medium text-indigo/80 md:flex">
+          <a href="https://www.amilynnecarroll.com/" className="hover:text-indigo">Home</a>
           <a href="#method" className="hover:text-indigo">The method</a>
           <a href="#build" className="hover:text-indigo">What you&apos;ll build</a>
           <a href="#faq" className="hover:text-indigo">FAQ</a>

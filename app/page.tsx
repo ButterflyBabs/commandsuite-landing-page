@@ -172,7 +172,7 @@ function Nav() {
           <img src="/brand/command-suite-logo.png" alt="LifeCharter Command Suite" width={1000} height={320} className="h-10 w-auto" />
         </a>
         <div className="hidden items-center gap-5 whitespace-nowrap text-sm font-medium text-indigo/80 md:flex xl:gap-8">
-          <a href="/" className="hover:text-indigo">Home</a>
+          <a href="https://www.amilynnecarroll.com/" className="hover:text-indigo">Home</a>
           <a href="#what" className="hidden hover:text-indigo xl:inline">What it is</a>
           <a href="#tour" className="hover:text-indigo">The Command Suite</a>
           <a href="#start" className="hidden hover:text-indigo xl:inline">Ways to start</a>
