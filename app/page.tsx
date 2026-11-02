@@ -222,28 +222,32 @@ const AWARD_URL =
 
 function AwardStrip() {
   return (
-    <section aria-label="Award recognition" className="border-y border-gold/30 bg-ivory py-8">
+    <section aria-label="Award recognition" className="bg-ivory px-6 py-14">
       <a
         href={AWARD_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="group mx-auto flex max-w-4xl flex-col items-center gap-5 px-6 text-center sm:flex-row sm:text-left"
+        className="group mx-auto grid max-w-6xl items-center gap-8 rounded-3xl border border-gold/50 bg-white p-6 shadow-card md:grid-cols-[0.9fr_1.1fr] md:p-10"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/awards/best-of-best-2026-badge.png"
-          alt="Best of Best Review Winner 2026 award badge"
-          width={282}
-          height={362}
-          className="h-24 w-auto shrink-0"
+          src="/awards/best-of-best-2026-trophies.png"
+          alt="Best of Best Review 2026 crystal award trophies"
+          width={1200}
+          height={761}
+          loading="lazy"
+          className="mx-auto h-auto w-full max-w-[460px]"
         />
-        <div>
+        <div className="text-center md:text-left">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gold">Award-winning · 2026</p>
-          <p className="mt-2 font-serif text-xl font-semibold leading-snug text-indigo md:text-2xl">
+          <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight text-indigo md:text-4xl">
             Best Business Coach for Founders in the United States of 2026
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed text-indigo/70">
+            LifeCharter Command Suite and AmiLynne &ldquo;Babs&rdquo; Carroll were recognized by Best of Best Review.
           </p>
-          <p className="mt-1 text-sm text-indigo/60 group-hover:text-indigo">
-            Recognized by Best of Best Review — read the announcement →
+          <p className="mt-5 text-sm font-semibold text-indigo underline decoration-gold underline-offset-4 group-hover:text-plum">
+            Read the announcement →
           </p>
         </div>
       </a>
