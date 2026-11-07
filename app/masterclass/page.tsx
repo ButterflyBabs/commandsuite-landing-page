@@ -234,13 +234,13 @@ function WatchFirst() {
       <div className="mx-auto max-w-4xl px-6 text-center">
         <Eyebrow>Watch this first · 5 minutes</Eyebrow>
         <h2 className="font-serif text-3xl font-semibold leading-tight text-balance md:text-4xl">
-          Built a job you don&apos;t even like? Start with three big questions.
+          Built a business you don&apos;t even like? Start with three big questions.
         </h2>
         <div className="mt-10 overflow-hidden rounded-3xl border border-indigo/10 bg-indigo-deep shadow-soft">
           <div className="relative aspect-video w-full">
             <iframe
               src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_VIDEO_ID}?rel=0&modestbranding=1&cc_load_policy=1`}
-              title="3 Big Questions: Built a Job You Don't Even Like?"
+              title="Built a Business You Don't Even Like? Ask These 3 Questions"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
