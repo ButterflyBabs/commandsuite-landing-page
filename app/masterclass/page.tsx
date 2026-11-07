@@ -221,6 +221,43 @@ function SessionBar() {
 }
 
 /* ================================================================== */
+/*  Watch first — the "Three Big Questions" video (hosted on YouTube)  */
+/*  Leave YOUTUBE_VIDEO_ID empty and the section does not show.        */
+/* ================================================================== */
+
+const YOUTUBE_VIDEO_ID = "n08FKXN5AOc";
+
+function WatchFirst() {
+  if (!YOUTUBE_VIDEO_ID) return null;
+  return (
+    <section className="bg-ivory py-20">
+      <div className="mx-auto max-w-4xl px-6 text-center">
+        <Eyebrow>Watch this first · 5 minutes</Eyebrow>
+        <h2 className="font-serif text-3xl font-semibold leading-tight text-balance md:text-4xl">
+          Built a job you don&apos;t even like? Start with three big questions.
+        </h2>
+        <div className="mt-10 overflow-hidden rounded-3xl border border-indigo/10 bg-indigo-deep shadow-soft">
+          <div className="relative aspect-video w-full">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_VIDEO_ID}?rel=0&modestbranding=1&cc_load_policy=1`}
+              title="3 Big Questions: Built a Job You Don't Even Like?"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="absolute inset-0 h-full w-full"
+            />
+          </div>
+        </div>
+        <div className="mt-10">
+          <PrimaryCTA href="#register">Save my seat →</PrimaryCTA>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ================================================================== */
 /*  The reframe — Hustle vs Command                                    */
 /* ================================================================== */
 
@@ -686,6 +723,7 @@ export default function MasterclassPage() {
       <StructuredData />
       <Hero />
       <SessionBar />
+      <WatchFirst />
       <Reframe />
       <Divider />
       <Method />
