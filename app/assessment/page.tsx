@@ -599,6 +599,20 @@ function ResultsView({
         )}
       </div>
 
+      {/* The deeper step: the Mini Command Audit is the second stage after this assessment, not a separate front door. */}
+      <div className="mt-8 rounded-3xl border border-indigo/10 bg-white/70 p-7 text-center">
+        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-teal">Want a deeper read first?</p>
+        <p className="mx-auto mt-3 max-w-lg text-indigo/75">
+          The Mini Command Audit goes 24 questions deep across twelve areas of your business and shows you your two best places to start. It takes about 8 minutes.
+        </p>
+        <a
+          href="https://lccommandsuite.com/mini-command-audit?utm_source=assessment&utm_medium=results&utm_campaign=go-deeper"
+          className="mt-5 inline-block font-semibold text-teal underline-offset-2 hover:text-plum hover:underline"
+        >
+          Take the Mini Command Audit →
+        </a>
+      </div>
+
       <p className="mx-auto mt-10 max-w-xl text-center font-serif text-lg text-plum">
         From white-knuckling a scattered hustle to hard-won harmony — one system, on purpose.
       </p>
